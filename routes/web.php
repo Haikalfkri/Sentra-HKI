@@ -13,19 +13,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/home', function () {
     return view('home.home');
 });
-
 
 Route::get('/login', function () {
     return view('login.login');
 });
 
-Route::get('/dashboard admin', function () {
-    return view('dashboard admin.dashboard');
+
+#Admin
+Route::get('/dashboardAdmin/dashboard', function () {
+    return view('dashboardAdmin.dashboard');
 });
 
-Route::get('/dashboard mahasiswa', function () {
-    return view('dashboard mahasiswa.dashboard');
+Route::get('/dashboardAdmin/adminProfile', function () {
+    return view('dashboardAdmin.adminProfile');
+});
+
+Route::get('/dashboardAdmin/tables', function () {
+    return view('dashboardAdmin.tables');
+});
+
+Route::get('/dashboardAdmin/notification', function () {
+    return view('dashboardAdmin.notification');
+});
+
+
+
+# user
+Route::get('/dashboardUser/dashboard', function () {
+    return view('dashboardUser.dashboard');
+});
+
+Route::get('/dashboardUser/mhsProfile', function () {
+    return view('dashboardUser.mhsProfile');
+});
+
+Route::get('/dashboardUser/form', function () {
+    return view('dashboardUser.form');
+});
+
+Route::get('/dashboardUser/status', function () {
+    return view('dashboardUser.notification');
 });
