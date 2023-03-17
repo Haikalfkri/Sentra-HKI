@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="dashboard">
+                    <a class="nav-link {{ (request()->is('dashboardUser/dashboard')) ? 'active' : '' }}" href="dashboard">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="mhsProfile">
+                    <a class="nav-link {{ (request()->is('dashboardUser/mhsProfile')) ? 'active' : '' }}" href="mhsProfile">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="form">
+                    <a class="nav-link {{ (request()->is('dashboardUser/form')) ? 'active' : '' }}" href="form">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="status">
+                    <a class="nav-link {{ (request()->is('dashboardUser/status')) ? 'active' : '' }}" href="status">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-bell-55 text-warning text-sm opacity-10"></i>
@@ -97,10 +97,12 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <ul class="navbar-nav  justify-content-end ms-md-auto pe-md-3 d-flex align-items-center">
                         <li class="nav-item d-flex align-items-center">
+
                             <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-sign-out me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Log Out</span>
                             </a>
+                            
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
