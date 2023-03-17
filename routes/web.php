@@ -35,12 +35,16 @@ Route::get('/dashboardAdmin/adminProfile', function () {
     return view('dashboardAdmin.adminProfile');
 });
 
-Route::get('/dashboardAdmin/tables', function () {
-    return view('dashboardAdmin.tables');
+Route::get('/dashboardAdmin/applicant', function () {
+    return view('dashboardAdmin.applicant');
 });
 
-Route::get('/dashboardAdmin/notification', function () {
-    return view('dashboardAdmin.notification');
+Route::get('/dashboardAdmin/formPengaju', function () {
+    return view('dashboardAdmin.formPengaju');
+});
+
+Route::get('/dashboardAdmin/user', function () {
+    return view('dashboardAdmin.user');
 });
 
 
@@ -59,5 +63,9 @@ Route::get('/dashboardUser/form', function () {
 });
 
 Route::get('/dashboardUser/status', function () {
-    return view('dashboardUser.notification');
+    return view('dashboardUser.status');
+});
+
+Route::get('/dashboardUser/file', function () {
+    return view('dashboardUser.file');
 });
