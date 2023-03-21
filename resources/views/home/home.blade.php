@@ -43,15 +43,16 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn bg-transparent" data-wow-delay="0.1s">
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
-                <small><i class="fa fa-map-marker-alt text-primary me-2"></i>Batam Centre, Jl. Ahmad Yani</small>
-                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>9.00 am - 8.00 pm</small>
+                <small class="text-white"><i class="fa fa-map-marker-alt text-primary me-2"></i>Batam Centre, Jl. Ahmad
+                    Yani</small>
+                <small class="ms-4 text-white"><i class="fa fa-clock text-primary me-2"></i>9.00 am - 8.00 pm</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
-                <small><i class="fa fa-envelope text-primary me-2"></i>info@polibatam.ac.id</small>
-                <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+62-778-469858</small>
+                <small class="text-white"><i class="fa fa-envelope text-primary me-2"></i>info@polibatam.ac.id</small>
+                <small class="ms-4 text-white"><i class="fa fa-phone-alt text-primary me-2"></i>+62-778-469858</small>
             </div>
         </div>
 
@@ -65,31 +66,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="#home" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">About</a>
-                    <a href="#" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-light m-0">
-                            <a href="#" class="dropdown-item">Projects</a>
-                            <a href="#" class="dropdown-item">Features</a>
-                            <a href="#" class="dropdown-item">Team Member</a>
-                            <a href="#" class="dropdown-item">Testimonial</a>
-                            <a href="#" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div>
-                    <a href="#" class="nav-item nav-link">Contact</a>
-                </div>
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-facebook-f text-primary"></small>
-                    </a>
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-twitter text-primary"></small>
-                    </a>
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-linkedin-in text-primary"></small>
-                    </a>
+                    <a href="#home" class="nav-item nav-link active">Beranda</a>
+                    <a href="#about" class="nav-item nav-link">Tentang</a>
+                    <a href="../dashboardAdmin/dashboard" class="nav-item nav-link">Profil</a>
                 </div>
             </div>
         </nav>
@@ -102,17 +81,19 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="homePage/img/c1.jpg" alt="Image">
+                    <img class="w-100" style="filter: blur(1.2px) brightness(70%);" src="homePage/img/bg.jpg"
+                        alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
                                     <p
-                                        class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown">
-                                        Welcome to SIHAKI</p>
-                                    <h1 class="display-1 mb-4 animated slideInDown">Make your HKI Status safe
-                                    </h1>
-                                    <a href="#about" class="btn btn-primary py-3 px-5 animated slideInDown">Explore More</a>
+                                        class="d-inline-block border border-white rounded text-white fw-semi-bold py-1 px-3 animated slideInDown">
+                                        Selamat datang di SIHAKI</p>
+                                    <h1 class="display-2 mb-4 animated slideInDown text-primary">Jadikan Status HKI Anda
+                                        aman</h1>
+                                    <a href="#about" class="btn btn-primary py-3 px-5 animated slideInDown">Jelajahi
+                                        Lebih Lanjut</a>
                                 </div>
                             </div>
                         </div>
@@ -128,10 +109,13 @@
         <div class="container mt-lg-3 mb-3">
             <div class="container">
                 <div class=" mb-5 justify-content-center text-center pt-4">
-                        <h2 class="section-title text-center mb-3">IPR Center</h2>
-                        <p>The Center for IPR has the function of serving researchers and inventors in consulting and managing IPR, helping to accelerate the acquisition of IPR on research results and PPM for the USD academic community and the wider community, and encouraging commercial efforts for IPR products, especially from the USD academic community.</p>
-                    </div>
+                    <h2 class="section-title text-center mb-3">Pusat Hak Kekayaan Intelektual (HKI)</h2>
+                    <p>Pusat HKI memiliki fungsi melayani para peneliti dan inventor dalam konsultasi dan pengurusan
+                        HKI, membantu percepatan perolehan HKI atas hasil-hasil penelitian dan PPM sivitas akademika USD
+                        dan masyarakat luas, serta mendorong upaya komersialisasi produk HKI, khususnya dari sivitas
+                        akademika.</p>
                 </div>
+            </div>
             <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row g-5">
                     <div class="col-lg-8 wow fadeIn" data-wow-delay="0.3s">
@@ -141,8 +125,9 @@
                                     <i class="fa fa-users text-white"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h4>Copyright</h4>
-                                    <span>is one part of intellectual property that has the broadest scope of protected objects.</span>
+                                    <h4>Hak Cipta</h4>
+                                    <span>merupakan salah satu bagian dari kekayaan intelektual yang memiliki cakupan
+                                        objek yang dilindungi paling luas.</span>
                                 </div>
                             </div>
                         </div>
@@ -158,26 +143,26 @@
         <div class="container py-4 pb-5 mb-5">
             <div class="row text-center mb-5">
                 <div class="col">
-                    <h1 class="text-white">SIHAKI achievement</h1>
+                    <h1 class="text-white">Pencapaian SIHAKI</h1>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-4 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
                     <h1 class="display-4 text-white" data-toggle="counter-up">234</h1>
-                    <span class="fs-5 text-white">approved</span>
+                    <span class="fs-5 text-white">disetujui</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
                     <h1 class="display-4 text-white" data-toggle="counter-up">34</h1>
-                    <span class="fs-5 text-white">Upload</span>
+                    <span class="fs-5 text-white">Unggah</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-4 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
                     <h1 class="display-4 text-white" data-toggle="counter-up">73</h1>
-                    <span class="fs-5 text-white">submitted</span>
+                    <span class="fs-5 text-white">dikirimkan</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
             </div>
@@ -189,7 +174,7 @@
     <div class="container-xxl py-5 mt-5">
         <div class="container pt-2">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="m-5">Approved copyrights</h1>
+                <h1 class="m-5">Hak cipta yang disetujui</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">

@@ -2,7 +2,7 @@
 :root {
     --primary: #355EFC;
     --secondary: #E93C05;
-    --tertiary: #555555;
+    --tertiary: #000000;
     --light: #DFE4FD;
     --dark: #011A41;
 }
@@ -99,7 +99,7 @@ h6,
 
 .top-bar {
     height: 45px;
-    border-bottom: 1px solid rgba(53, 94, 252, .07);
+    border-bottom: 1px solid rgba(183,183,183, .5);
 }
 
 .navbar .dropdown-toggle::after {
@@ -113,7 +113,7 @@ h6,
 
 .navbar .navbar-nav .nav-link {
     color: var(--tertiary);
-    font-weight: 500;
+    font-weight: 600;
     outline: none;
 }
 
@@ -193,7 +193,7 @@ h6,
         position: relative;
         min-height: 450px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
