@@ -68,7 +68,7 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="#home" class="nav-item nav-link active">Beranda</a>
                     <a href="#about" class="nav-item nav-link">Tentang</a>
-                    <a href="../dashboardAdmin/dashboard" class="nav-item nav-link">Profil</a>
+                    <a href="../admin/dashboard" class="nav-item nav-link">Profil</a>
                 </div>
             </div>
         </nav>
