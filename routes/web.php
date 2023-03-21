@@ -27,45 +27,45 @@ Route::get('/login', function () {
 
 
 #Admin
-Route::get('/dashboardAdmin/dashboard', function () {
-    return view('dashboardAdmin.dashboard');
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
 });
 
-Route::get('/dashboardAdmin/adminProfile', function () {
-    return view('dashboardAdmin.adminProfile');
+Route::get('/admin/profile', function () {
+    return view('admin.profile');
 });
 
-Route::get('/dashboardAdmin/applicant', function () {
-    return view('dashboardAdmin.applicant');
+Route::get('/admin/applicant', function () {
+    return view('admin.applicant');
 });
 
-Route::get('/dashboardAdmin/formPengaju', function () {
-    return view('dashboardAdmin.formPengaju');
+Route::get('/admin/formPengaju', function () {
+    return view('admin.formPengaju');
 });
 
-Route::get('/dashboardAdmin/user', function () {
-    return view('dashboardAdmin.user');
+Route::get('/admin/user', function () {
+    return view('admin.user');
 });
 
 
 
 # user
-Route::get('/dashboardUser/dashboard', function () {
-    return view('dashboardUser.dashboard');
+Route::get('/user/dashboard', function () {
+    return view('user.dashboard');
 });
 
-Route::get('/dashboardUser/mhsProfile', function () {
-    return view('dashboardUser.mhsProfile');
+Route::get('/user/profile', function () {
+    return view('user.profile');
 });
 
-Route::get('/dashboardUser/form', function () {
-    return view('dashboardUser.form');
+Route::get('/user/form', function () {
+    return view('user.form');
 });
 
-Route::get('/dashboardUser/status', function () {
-    return view('dashboardUser.status');
+Route::get('/user/status', function () {
+    return view('user.status');
 });
 
-Route::get('/dashboardUser/file', function () {
-    return view('dashboardUser.file');
+Route::get('/user/file', function () {
+    return view('user.file');
 });

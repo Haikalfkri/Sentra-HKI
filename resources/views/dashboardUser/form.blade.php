@@ -1,4 +1,4 @@
-@extends('dashboardUser.layouts.main')
+@extends('user.layouts.main')
 
 @section('container')
     <div class="row">
@@ -18,11 +18,6 @@
                                 <input type="text" class="form-control" id="application" placeholder="e.g sentra HKI" required>
                             </div>
                             <div class="form-group">
-                                <label for="type">Submission Type</label>
-                                <input type="text" class="form-control" id="type" placeholder="e.g hak cipta"
-                                    required>
-                            </div>
-                            <div class="form-group">
                                 <label for="department">Department</label>
                                 <input type="text" class="form-control" id="department" placeholder="Department"
                                     required>
@@ -30,6 +25,13 @@
                             <div class="form-group">
                                 <label for="date">Date</label>
                                 <input type="date" class="form-control" id="date">
+                            </div>
+                            <div class="form-groud">
+                                <label for="option">Submission Type</label>
+                                <select id="option" class="form-select" aria-label="Default select example">
+                                    <option selected>-- Choose --</option>
+                                    <option value="1">Hak Cipta</option>
+                                </select>
                             </div>
                         </div>
                         

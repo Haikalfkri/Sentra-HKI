@@ -24,24 +24,26 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-    <div class="height-300 bg-primary position-absolute w-100"></div>
+    <div class="height-300 position-absolute w-100" style="background-color:#0D6EFD;"></div>
     <aside
         class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
         id="sidenav-main">
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-                target="_blank">
-                <img src="/theme/assets/img/apple-touch-icon.png" class="navbar-brand-img h-100" alt="main_logo">
+            <a class="navbar-brand m-4 mt-0" href="../home">
+                <h2 class="text-primary">SIHAKI</h2>
+                <!--
+                    <img src="/theme/assets/img/apple-touch-icon.png" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold">SIHAKI</span>
+                -->
             </a>
         </div>
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('dashboardUser/dashboard')) ? 'active' : '' }}" href="dashboard">
+                    <a class="nav-link {{ (request()->is('user/dashboard')) ? 'active' : '' }}" href="dashboard">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -50,7 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('dashboardUser/mhsProfile')) ? 'active' : '' }}" href="mhsProfile">
+                    <a class="nav-link {{ (request()->is('user/profile')) ? 'active' : '' }}" href="profile">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
@@ -59,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('dashboardUser/form')) ? 'active' : '' }}" href="form">
+                    <a class="nav-link {{ (request()->is('user/form')) ? 'active' : '' }}" href="form">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -68,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('dashboardUser/status')) ? 'active' : '' }}" href="status">
+                    <a class="nav-link {{ (request()->is('user/status')) ? 'active' : '' }}" href="status">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-bell-55 text-warning text-sm opacity-10"></i>
