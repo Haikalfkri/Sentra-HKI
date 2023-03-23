@@ -23300,7 +23300,7 @@ hr.horizontal.gray-light {
 }
 
 .g-sidenav-show .sidenav .nav-item .collapse {
-  height: auto;
+  height: ;
   transition: all 0.2s ease-in-out;
 }
 

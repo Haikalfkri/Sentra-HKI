@@ -6,30 +6,30 @@
             <div class="card">
                 <div class="card-body">
                     <form action="">
-                        <h4>Contact</h4>
+                        <h4>Data</h4>
                         <div class="form-group">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Your Name"
+                                <label for="name">Nama</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nama"
                                     required>
                             </div>
                             <div class="form-group">
-                                <label for="application">App Name</label>
+                                <label for="application">Nama Aplikasi</label>
                                 <input type="text" class="form-control" id="application" placeholder="e.g sentra HKI" required>
                             </div>
                             <div class="form-group">
-                                <label for="department">Department</label>
-                                <input type="text" class="form-control" id="department" placeholder="Department"
+                                <label for="department">Role</label>
+                                <input type="text" class="form-control" id="department" placeholder="eg. dosen, mahasiswa"
                                     required>
                             </div>
                             <div class="form-group">
-                                <label for="date">Date</label>
+                                <label for="date">Tanggal</label>
                                 <input type="date" class="form-control" id="date">
                             </div>
                             <div class="form-groud">
-                                <label for="option">Submission Type</label>
+                                <label for="option">Tipe</label>
                                 <select id="option" class="form-select" aria-label="Default select example">
-                                    <option selected>-- Choose --</option>
+                                    <option selected>-- Pilih --</option>
                                     <option value="1">Hak Cipta</option>
                                 </select>
                             </div>

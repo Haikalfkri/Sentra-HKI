@@ -31,7 +31,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-4 mt-0" href="../home">
+            <a class="navbar-brand m-4 mt-0" href="">
                 <h2 class="text-primary">SIHAKI</h2>
                 <!--
                     <img src="/theme/assets/img/apple-touch-icon.png" class="navbar-brand-img h-100" alt="main_logo">
@@ -48,7 +48,7 @@
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Dashboard</span>
+                        <span class="nav-link-text ms-1">Beranda</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -57,7 +57,7 @@
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Profile</span>
+                        <span class="nav-link-text ms-1">Profil</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -78,6 +78,16 @@
                         <span class="nav-link-text ms-1">Status</span>
                     </a>
                 </li>
+                <hr class="horizontal dark mt-0 mb-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fa fa-home text-warning text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Home</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
@@ -91,10 +101,10 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
-                                href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
+                                href="javascript:;">Halaman</a></li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Beranda</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">Beranda</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <ul class="navbar-nav  justify-content-end ms-md-auto pe-md-3 d-flex align-items-center">
@@ -102,7 +112,7 @@
 
                             <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-sign-out me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Log Out</span>
+                                <span class="d-sm-inline d-none">Keluar</span>
                             </a>
                             
                         </li>
@@ -157,7 +167,7 @@
                 type: 'column'
             },
             title: {
-                text: 'User Chart Per Month'
+                text: 'Jumlah Pengguna Dalam Sebulan'
             },
             xAxis: {
                 categories: [
@@ -179,7 +189,7 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Number of Users'
+                    text: 'Jumlah Pengguna'
                 }
             },
             tooltip: {
