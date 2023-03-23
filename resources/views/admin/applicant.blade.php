@@ -7,14 +7,17 @@
                 <div class="table-responsive">
                     <form action="">
                         <table class="table table-hover">
-                            <h5 class="mb-5">Detail Pengajuan</h5>
+                            <div class="input-group w-20 mb-3 d-flex float-end">
+                                <input type="text" class="form-control" placeholder="Type here...">
+                                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            </div>
                             <thead>
                                 <th scope="col">No</th>
-                                <th scope="col">Submitter</th>
-                                <th scope="col">Application Name</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Attachment</th>
+                                <th scope="col">Pengaju</th>
+                                <th scope="col">Nama Aplikasi</th>
+                                <th scope="col">Tipe</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Tinjauan</th>
                                 <th scope="col">Status</th>
                             </thead>
                             <tbody>
@@ -26,10 +29,10 @@
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
-                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Review</a>
+                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
                                     <td><span class="badge badge-warning" style="background-color: #FFED00">
-                                        Pending</span></td>
+                                        Tertunda</span></td>
                                 </tr>
                                 <tr>
                                     <td scope="row">1</td>
@@ -39,9 +42,9 @@
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
-                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Review</a>
+                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
-                                    <td><span class="badge badge-danger" style="background-color: #DF2E38">Rejected</span></td>
+                                    <td><span class="badge badge-danger" style="background-color: #DF2E38">Ditolak</span></td>
                                 </tr>
                                 <tr>
                                     <td scope="row">1</td>
@@ -51,9 +54,9 @@
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
-                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Review</a>
+                                        <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
-                                    <td><span class="badge badge-success" style="background-color: #03C988">Accepted</span></td>
+                                    <td><span class="badge badge-success" style="background-color: #03C988">Diterima</span></td>
                                 </tr>
                             </tbody>
                         </table>

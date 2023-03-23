@@ -12,7 +12,7 @@
                             <input style="cursor:pointer;" class="form-control mb-3" id="pengalihan" type="file" required>
                         </div>
                         <div class="form-group">
-                            <label for="ktp" class="form-label">KTP <span style="margin-left:10px; font-size: 10px; color:grey;">*file should be pdf</span></label>
+                            <label for="ktp" class="form-label">KTP <span style="margin-left:10px; font-size: 10px; color:grey;">*file harus pdf</span></label>
                             <input style="cursor:pointer;" class="form-control mb-3" id="ktp" type="file" required>
                         </div>
                         <div>
@@ -30,7 +30,7 @@
                                 required>
                         </div>
 
-                        <a href="form" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"aria-hidden="true"></i>  Back</a>
+                        <a href="form" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"aria-hidden="true"></i>  Kembali</a>
                         
                         <button type="submit" class="btn btn-default btn-primary btn-fill float-end"
                             style="cursor:pointer;">Submit</button>

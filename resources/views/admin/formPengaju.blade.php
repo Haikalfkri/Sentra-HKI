@@ -45,13 +45,13 @@
                     <div class="mt-5 float-end">
                         <!-- Reject Button -->
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#RejectBtn">Reject</button>
+                            data-bs-target="#RejectBtn">Tolak</button>
                         <div id="RejectBtn" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Description</h4>
+                                        <h4 class="modal-title">Deskripsi</h4>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Description -->
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
-                                            data-bs-dismiss="modal">Reject</button>
+                                            data-bs-dismiss="modal">Tolak</button>
                                     </div>
                                 </div>
                             </div>
@@ -71,13 +71,13 @@
 
                         <!-- Accept button -->
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#AcceptBtn">Accept</button>
+                            data-bs-target="#AcceptBtn">Terima</button>
                         <div id="AcceptBtn" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Description</h4>
+                                        <h4 class="modal-title">Deskripsi</h4>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Description -->
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-success"
-                                            data-bs-dismiss="modal">Accept</button>
+                                            data-bs-dismiss="modal">Terima</button>
                                     </div>
                                 </div>
                             </div>

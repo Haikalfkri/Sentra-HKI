@@ -8,12 +8,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Approve</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Disetujui</p>
                             <h5 class="font-weight-bolder">
                                 234
                             </h5>
                             <p class="mb-0">
-                                <span class="text-success text-sm font-weight-bolder">Approve</span>
+                                <span class="text-success text-sm font-weight-bolder">Disetujui</span>
                             </p>
                         </div>
                     </div>
@@ -26,18 +26,42 @@
             </div>
         </div>
     </div>
+    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Ditolak</p>
+                            <h5 class="font-weight-bolder">
+                                100
+                            </h5>
+                            <p class="mb-0">
+                                <span class="text-danger text-sm font-weight-bolder">Ditolak</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                            <i class="ni ni-fat-remove text-lg opacity-10" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Upload</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Mengunggah</p>
                             <h5 class="font-weight-bolder">
                                 34
                             </h5>
                             <p class="mb-0">
-                                <span class="text-success text-sm font-weight-bolder">Upload</span>
+                                <span class="text-success text-sm font-weight-bolder">Mengunggah</span>
                             </p>
                         </div>
                     </div>
@@ -56,12 +80,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Submitted</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Disampaikan</p>
                             <h5 class="font-weight-bolder">
                                 73
                             </h5>
                             <p class="mb-0">
-                                <span class="text-success text-sm font-weight-bolder">Submitted</span>
+                                <span class="text-success text-sm font-weight-bolder">Disampaikan</span>
                             </p>
                         </div>
                     </div>
