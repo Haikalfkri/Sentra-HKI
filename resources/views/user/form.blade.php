@@ -9,9 +9,8 @@
                         <h4>Data</h4>
                         <div class="form-group">
                             <div class="form-group">
-                                <label for="name">Nama</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nama"
-                                    required>
+                                <label for="id">ID</label>
+                                <input type="text" class="form-control" id="id" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="application">Nama Aplikasi</label>
@@ -20,11 +19,11 @@
                             <div class="form-group">
                                 <label for="department">Role</label>
                                 <input type="text" class="form-control" id="department" placeholder="eg. dosen, mahasiswa"
-                                    required>
+                                    readonly>
                             </div>
                             <div class="form-group">
                                 <label for="date">Tanggal</label>
-                                <input type="date" class="form-control" id="date">
+                                <input type="date" class="form-control" id="date" readonly>
                             </div>
                             <div class="form-groud">
                                 <label for="option">Tipe</label>

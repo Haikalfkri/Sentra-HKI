@@ -31,10 +31,6 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/admin/profile', function () {
-    return view('admin.profile');
-});
-
 Route::get('/admin/applicant', function () {
     return view('admin.applicant');
 });
