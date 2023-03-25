@@ -100,6 +100,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.height-300 {
+  background-color: #0D6EFD;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -23296,7 +23300,7 @@ hr.horizontal.gray-light {
 }
 
 .g-sidenav-show .sidenav .nav-item .collapse {
-  height: auto;
+  height: ;
   transition: all 0.2s ease-in-out;
 }
 
