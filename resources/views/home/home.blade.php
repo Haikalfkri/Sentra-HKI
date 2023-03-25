@@ -58,17 +58,17 @@
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="display-5 text-primary m-0">SIHAKI</h1>
+                <h1 class="display-5 text-primary m-0" >SIHAKI</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="#home" class="nav-item nav-link active">Beranda</a>
+                <div class="navbar-nav ms-auto p-5 p-lg-0" >
+                    <a href="#home" class="nav-item nav-link">Beranda</a>
+                    <a href="../login" class="nav-item nav-link">Permohonan</a>
                     <a href="#about" class="nav-item nav-link">Tentang</a>
-                    <a href="../dashboardAdmin/dashboard" class="nav-item nav-link">Profil</a>
                 </div>
             </div>
         </nav>
@@ -81,7 +81,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" style="filter: blur(1.2px) brightness(70%);" src="homePage/img/bg.jpg"
+                    <img class="w-100" style="filter: brightness(90%); background-image: cover" src="homePage/img/c.jpg"
                         alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
@@ -217,58 +217,6 @@
         </div>
     </div>
     <!-- Projects End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-2 py-3 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Batam Centre, Jl.Ahmad Yani</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62-778-469858</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@polibatam.ac.id</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Financial Planning</a>
-                    <a class="btn btn-link" href="">Cash Investment</a>
-                    <a class="btn btn-link" href="">Financial Consultancy</a>
-                    <a class="btn btn-link" href="">Business Loans</a>
-                    <a class="btn btn-link" href="">Business Analysis</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative w-100">
-                        <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
 
     <!-- Copyright Start -->
     <div class="container-fluid copyright py-3">
