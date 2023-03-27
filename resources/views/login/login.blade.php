@@ -28,7 +28,7 @@
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
-	            	<button type="submit" onclick="location.href='../dashboardUser/dashboard'" class="form-control bg-primary px-3">Sign In</button>
+	            	<button type="submit" onclick="location.href='../user/dashboard'" class="form-control bg-primary px-3">Sign In</button>
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
