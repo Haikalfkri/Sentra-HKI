@@ -16,7 +16,7 @@
                             <thead>
                                 <th scope="col">No</th>
                                 <th scope="col">ID</th>
-                                <th scope="col">Nama Aplikasi</th>
+                                <th scope="col">Nama Karya</th>
                                 <th scope="col">Tipe</th>
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Tinjauan</th>
@@ -34,7 +34,7 @@
                                         <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
                                     <td><span class="badge badge-warning" style="background-color: #FFED00">
-                                            Tertunda</span></td>
+                                            Diproses</span></td>
                                 </tr>
                                 <tr>
                                     <td scope="row">1</td>
@@ -46,7 +46,7 @@
                                         <!-- Button trigger modal -->
                                         <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
-                                    <td><span class="badge badge-danger" style="background-color: #DF2E38">Ditolak</span>
+                                    <td><span class="badge badge-danger" style="background-color: #DF2E38">Belum Lengkap</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -59,7 +59,7 @@
                                         <!-- Button trigger modal -->
                                         <a href="formPengaju" class="btn btn-primary"><i class="fa fa-eye"></i> Tinjau</a>
                                     </td>
-                                    <td><span class="badge badge-success" style="background-color: #03C988">Diterima</span>
+                                    <td><span class="badge badge-success" style="background-color: #03C988">Lengkap</span>
                                     </td>
                                 </tr>
                             </tbody>

@@ -16,8 +16,7 @@
 
                             <thead>
                                 <th scope="col">No</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nama Aplikasi</th>
+                                <th scope="col">Nama Karya</th>
                                 <th scope="col">Tipe</th>
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Status</th>
@@ -26,40 +25,38 @@
                             <tbody>
                                 <tr>
                                     <td scope="row">1</td>
-                                    <td>4342201015</td>
                                     <td>Sentra HKI</td>
                                     <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
                                         <span class="badge badge-warning" style="background-color: #FFED00">
-                                            Tertunda</span>
+                                            Diproses</span>
                                     </td>
                                     <td>-</td>
                                 </tr>
                                 <tr>
                                     <td scope="row">2</td>
-                                    <td>4342201015</td>
                                     <td>SIM PAP</td>
                                     <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
-                                        <span class="badge badge-danger" style="background-color: #DF2E38">Ditolak</span>
+                                        <span class="badge badge-danger" style="background-color: #DF2E38">Belum Lengkap</span>
                                     </td>
-                                    <td>you get accepted</td>
+                                    <td>KTP kurang jelas</td>
                                 </tr>
                                 <tr>
                                     <td scope="row">3</td>
-                                    <td>4342201015</td>
                                     <td>SIM PAP</td>
                                     <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
-                                        <span class="badge badge-success" style="background-color: #03C988">Diterima</span>
+                                        <span class="badge badge-success" style="background-color: #03C988">Lengkap</span>
                                     </td>
                                     <td>you get Rejected </td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
                 </form>
             </div>
         </div>

@@ -81,7 +81,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" style="filter: brightness(90%); background-image: cover" src="homePage/img/c.jpg"
+                    <img class="w-100" style="filter: brightness(40%); background-image: cover" src="homePage/img/c.jpg"
                         alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
@@ -107,8 +107,11 @@
     <!-- About Start -->
     <div id="about" class="container-xxl py-5">
         <div class="container mt-lg-3 mb-3">
-            <div class="container">
-                <div class=" mb-5 justify-content-center text-center pt-4">
+            <div class="container" style="display: flex; justify-content: space-between;">
+                <div>
+                    <img src="theme/assets/img/logo-ki-web.jpg" style="width: 600px; height: 500px" alt="">
+                </div>
+                <div class="mb-5 justify-content-center text-center pt-4" style="width: 500px">
                     <h2 class="section-title text-center mb-3">Pusat Hak Kekayaan Intelektual (HKI)</h2>
                     <p>Pusat HKI memiliki fungsi melayani para peneliti dan inventor dalam konsultasi dan pengurusan
                         HKI, membantu percepatan perolehan HKI atas hasil-hasil penelitian dan PPM sivitas akademika USD
@@ -118,10 +121,10 @@
             </div>
             <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row g-5">
-                    <div class="col-lg-8 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="col-lg-12 wow fadeIn" data-wow-delay="0.3s">
                         <div class="h-100">
                             <div class="d-flex">
-                                <div class="flex-shrink-2 btn-lg-square rounded-circle bg-primary">
+                                <div class="flex-shrink-2 btn-lg-square bg-primary" style="border-radius: 80%;">
                                     <i class="fa fa-users text-white"></i>
                                 </div>
                                 <div class="ps-3">

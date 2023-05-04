@@ -41,8 +41,13 @@
                                             <input type="password" class="form-control" id="pwd" required>
                                         </div>
                                         <div class="form-group" style="text-align: left">
-                                            <label for="role">Role</label>
-                                            <input type="text" class="form-control" id="role" required>
+                                            <label for="option">Role</label>
+                                            <select class="form-select" aria-label="option" id="option">
+                                                <option selected>-- Pilih --</option>
+                                                <option value="1">Mahasiswa</option>
+                                                <option value="2">Dosen</option>
+                                                <option value="3">Laboran</option>
+                                            </select>
                                         </div>
                                     </div>
 
