@@ -8,12 +8,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Disetujui</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
                             <h5 class="font-weight-bolder">
                                 234
                             </h5>
                             <p class="mb-0">
-                                <span class="text-success text-sm font-weight-bolder">Disetujui</span>
+                                <span class="text-success text-sm font-weight-bolder">Lengkap</span>
                             </p>
                         </div>
                     </div>
@@ -32,12 +32,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Ditolak</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
                             <h5 class="font-weight-bolder">
                                 100
                             </h5>
                             <p class="mb-0">
-                                <span class="text-danger text-sm font-weight-bolder">Ditolak</span>
+                                <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
                             </p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
         <div class="col-lg-5">
             <div class="card card-carousel overflow-hidden h-100 p-0">
                 <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-                    <div class="carousel-inner border-radius-lg h-100">
+                    <div class="carousel-inner border-radius-lg h-100 mt-5">
                         <div class="carousel-item h-100 active">
                             <div class="text-center mt-3 w-80" style="font-family: jost; margin-left:40px">
                                 <h4>UU Hak Cipta</h4>
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item h-100 active">
+                        <div class="carousel-item h-100">
                             <div class="text-center mt-3 w-80" style="font-family: jost; margin-left:40px">
                                 <h4>UU Hak Cipta</h4>
                                 <h5>Nomor 19 Tahun 2002</h5>
