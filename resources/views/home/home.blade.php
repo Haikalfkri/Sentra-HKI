@@ -43,7 +43,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid fixed-top px-0 wow fadeIn bg-transparent" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small class="text-white"><i class="fa fa-map-marker-alt text-primary me-2"></i>Batam Centre, Jl. Ahmad
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn " data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 text-primary m-0" >SIHAKI</h1>
             </a>
@@ -81,16 +81,16 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" style="filter: brightness(90%); background-image: cover" src="homePage/img/c.jpg"
+                    <img class="w-100" style="filter: brightness(90%); background-image: cover" src="homePage/img/55.jpg"
                         alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
                                     <p
-                                        class="d-inline-block border border-white rounded text-white fw-semi-bold py-1 px-3 animated slideInDown">
+                                        class="d-inline-block border border-primary rounded text-white fw-semi-bold py-1 px-3 animated slideInDown">
                                         Selamat datang di SIHAKI</p>
-                                    <h1 class="display-2 mb-4 animated slideInDown text-primary">Jadikan Status HKI Anda
+                                    <h1 class="display-2 mb-4 animated slideInDown text-white">Jadikan Status HKI Anda
                                         aman</h1>
                                     <a href="#about" class="btn btn-primary py-3 px-5 animated slideInDown">Jelajahi
                                         Lebih Lanjut</a>

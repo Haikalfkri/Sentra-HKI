@@ -45,7 +45,7 @@
                                     <td>
                                         <span class="badge badge-danger" style="background-color: #DF2E38">Ditolak</span>
                                     </td>
-                                    <td>you get accepted</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <td scope="row">3</td>
@@ -56,7 +56,7 @@
                                     <td>
                                         <span class="badge badge-success" style="background-color: #03C988">Diterima</span>
                                     </td>
-                                    <td>you get Rejected </td>
+                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>

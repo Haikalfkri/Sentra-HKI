@@ -9,7 +9,7 @@
                     <button type="button" class="btn btn-primary input-group w-10 align-self-end" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" style="background-color: #0D6EFD
                         ">
-                        <i class="fa fa-plus mt-1"><span style="margin-left: 10px;">Tambah</span></i>
+                        <i class="fa fa-plus mt-1" style="margin-left: -5px;"><span> Tambah</span></i>
                     </button>
 
                     <div class="input-group w-20 mb-3 d-flex">
@@ -26,23 +26,37 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Pengguna</h5>
-                                <span class="close" data-bs-dismiss="modal" aria-label="Close"aria-hidden="true" style="cursor: pointer;"><i class="fa fa-times"></i></span>
+                                <span class="close" data-bs-dismiss="modal" aria-label="Close"aria-hidden="true"
+                                    style="cursor: pointer;"><i class="fa fa-times"></i></span>
                             </div>
                             <div class="modal-body">
                                 <form action="">
 
                                     <div class="form-group">
                                         <div class="form-group" style="text-align: left">
-                                            <label for="username">Username</label>
+                                            <label for="username">NIK</label>
                                             <input type="text" class="form-control" id="username" required>
                                         </div>
                                         <div class="form-group" style="text-align: left">
-                                            <label for="pwd">Password</label>
+                                            <label for="pwd">Nama</label>
                                             <input type="password" class="form-control" id="pwd" required>
                                         </div>
                                         <div class="form-group" style="text-align: left">
-                                            <label for="role">Role</label>
-                                            <input type="text" class="form-control" id="role" required>
+                                            <label for="pwd">Email</label>
+                                            <input type="password" class="form-control" id="pwd" required>
+                                        </div>
+                                        <div class="form-group" style="text-align: left">
+                                            <label for="pwd">No.Telepon</label>
+                                            <input type="password" class="form-control" id="pwd" required>
+                                        </div>
+                                        <div class="form-group" style="text-align: left">
+                                            <label for="role">Sebagai</label>
+                                            <select id="option" class="form-select" aria-label="Default select example">
+                                                <option selected>-- Pilih --</option>
+                                                <option value="1">Ultraman</option>
+                                                <option value="1">Power Ranger</option>
+                                                <option value="1">Kamen Raider</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -67,6 +81,7 @@
                             <thead>
                                 <th scope="col">No</th>
                                 <th scope="col">ID</th>
+                                <th scope="col">Nama</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Role</th>
@@ -77,17 +92,19 @@
                                 <tr>
                                     <td scope="row">1</td>
                                     <td>4342201016</td>
-                                    <td>alif@gmail.com</td>
-                                    <td>Batu Aji</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td>Mahasiswa</td>
-                                    <td>01274381927</td>
+                                    <td></td>
                                     <td><a href="" type="button" class="btn btn-danger"><i class="fa fa-trash"
                                                 aria-hidden="true"></i></td></a>
                                 </tr>
                                 <tr>
-                                    <td scope="row">1</td>
+                                    <td scope="row">2</td>
                                     <td>434220015</td>
-                                    <td>alif@gmail.com</td>
+                                    <td>Alif</td>
+                                    <td>alif_jr@gmail.com</td>
                                     <td>Batam Kota</td>
                                     <td>Mahasiswa</td>
                                     <td>0123456789</td>
