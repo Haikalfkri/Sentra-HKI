@@ -117,7 +117,10 @@
                                 <h4>UU Hak Cipta</h4>
                                 <h5>Nomor 28 Tahun 2014</h5>
                                 <div class="mt-4">
-                                    <p>Setiap Orang dilarang melakukan Penggunaan Secara Komersial, Penggandaan, Pengumuman, Pendistribusian, dan/atau Komunikasi atas Potret yang dibuatnya guna kepentingan reklame atau periklanan secara komersial tanpa persetujuan tertulis dari orang yang dipotret atau ahli warisnya.</p>
+                                    <p>Setiap Orang dilarang melakukan Penggunaan Secara Komersial, Penggandaan, Pengumuman,
+                                        Pendistribusian, dan/atau Komunikasi atas Potret yang dibuatnya guna kepentingan
+                                        reklame atau periklanan secara komersial tanpa persetujuan tertulis dari orang yang
+                                        dipotret atau ahli warisnya.</p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +129,10 @@
                                 <h4>UU Hak Cipta</h4>
                                 <h5>Nomor 19 Tahun 2002</h5>
                                 <div class="mt-4">
-                                    <p>Pencipta atau Pemegang Hak Cipta atas karya sinematografi dan Program Komputer memiliki hak untuk memberikan izin atau melarang orang lain yang tanpa persetujuannya menyewakan Ciptaan tersebut untuk kepentingan yang bersifat komersial</p>
+                                    <p>Pencipta atau Pemegang Hak Cipta atas karya sinematografi dan Program Komputer
+                                        memiliki hak untuk memberikan izin atau melarang orang lain yang tanpa
+                                        persetujuannya menyewakan Ciptaan tersebut untuk kepentingan yang bersifat komersial
+                                    </p>
                                 </div>
                             </div>
                         </div>

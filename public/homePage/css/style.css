@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
     --primary: #355EFC;
-    --secondary: #E93C05;
+    --secondary: #c2cefe;
     --tertiary: #000000;
     --light: #DFE4FD;
     --dark: #011A41;
@@ -112,7 +112,7 @@ h6,
 }
 
 .navbar .navbar-nav .nav-link {
-    color: var(--dark);
+    color: var(--secondary);
     font-weight: 600;
     outline: none;
 }

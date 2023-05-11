@@ -52,7 +52,7 @@
                                     <td>
                                         <span class="badge badge-success" style="background-color: #03C988">Lengkap</span>
                                     </td>
-                                    <td>you get Rejected </td>
+                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>

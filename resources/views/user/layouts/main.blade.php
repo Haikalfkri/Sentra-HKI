@@ -32,7 +32,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-4 mt-0" href="">
-                <h2 class="text-primary">SIHAKI</h2>
+                <h2 style="color: #355EFC">SIHAKI</h2>
                 <!--
                     <img src="/theme/assets/img/apple-touch-icon.png" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold">SIHAKI</span>
@@ -40,10 +40,10 @@
             </a>
         </div>
         <hr class="horizontal dark mt-0">
-        <div class= "collapse navbar-collapse w-auto h-100" style="position: fixed;" id="sidenav-collapse-main">
+        <div class="collapse navbar-collapse w-auto h-100" style="position: fixed;" id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('user/dashboard')) ? 'active' : '' }}" href="dashboard">
+                    <a class="nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}" href="dashboard">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('user/profile')) ? 'active' : '' }}" href="profile">
+                    <a class="nav-link {{ request()->is('user/profile') ? 'active' : '' }}" href="profile">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('user/form')) ? 'active' : '' }}" href="form">
+                    <a class="nav-link {{ request()->is('user/form') ? 'active' : '' }}" href="form">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -70,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('user/status')) ? 'active' : '' }}" href="status">
+                    <a class="nav-link {{ request()->is('user/status') ? 'active' : '' }}" href="status">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-bell-55 text-warning text-sm opacity-10"></i>
@@ -85,7 +85,7 @@
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa fa-home text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Home</span>
+                        <span class="nav-link-text ms-1">Rumah</span>
                     </a>
                 </li>
             </ul>
@@ -114,7 +114,7 @@
                                 <i class="fa fa-sign-out me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
-                            
+
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
@@ -167,7 +167,7 @@
                 type: 'column'
             },
             title: {
-                text: 'Jumlah Pengguna Dalam Sebulan'
+                text: 'Total Ajuan'
             },
             xAxis: {
                 categories: [
@@ -189,7 +189,7 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Jumlah Pengguna'
+                    text: 'Ajuan'
                 }
             },
             tooltip: {
@@ -205,7 +205,7 @@
                 }
             },
             series: [{
-                name: 'User',
+                name: 'Ajuan',
                 data: [20, 44, 100, 1000]
 
             }]

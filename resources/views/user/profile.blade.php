@@ -19,7 +19,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name" class="form-control-label">Nama</label>
-                                    <input class="form-control" id="name" type="text" readonly>
+                                    <input class="form-control" id="name" type="text">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -77,7 +77,7 @@
                             Haikal Fikri
                         </h5>
                         <div class="h6 font-weight-300">
-                            Teknik Informatika
+
                         </div>
                         <div class="h6 mt-4">
                             text@gmail.com
