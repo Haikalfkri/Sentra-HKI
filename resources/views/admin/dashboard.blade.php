@@ -8,12 +8,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Disetujui</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
                             <h5 class="font-weight-bolder">
                                 234
                             </h5>
                             <p class="mb-0">
-                                <span class="text-success text-sm font-weight-bolder">Disetujui</span>
+                                <span class="text-success text-sm font-weight-bolder">Lengkap</span>
                             </p>
                         </div>
                     </div>
@@ -32,12 +32,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Ditolak</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
                             <h5 class="font-weight-bolder">
                                 100
                             </h5>
                             <p class="mb-0">
-                                <span class="text-danger text-sm font-weight-bolder">Ditolak</span>
+                                <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
                             </p>
                         </div>
                     </div>

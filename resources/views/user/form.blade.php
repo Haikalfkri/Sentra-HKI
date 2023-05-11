@@ -13,11 +13,11 @@
                                 <input type="text" class="form-control" id="id" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="application">Nama Aplikasi</label>
+                                <label for="application">Nama Karya</label>
                                 <input type="text" class="form-control" id="application" placeholder="e.g sentra HKI" required>
                             </div>
                             <div class="form-group">
-                                <label for="department">Role</label>
+                                <label for="department">Sebagai</label>
                                 <input type="text" class="form-control" id="department" placeholder="eg. dosen, mahasiswa"
                                     readonly>
                             </div>
@@ -35,7 +35,7 @@
                         </div>
                         
                         <div class="mt-5">
-                            <a href="file" type="button" class="btn btn-primary">Next</a>
+                            <a href="file" type="button" class="btn btn-primary">Selanjutnya</a>
                         </div>
                     </form>
                 </div>
