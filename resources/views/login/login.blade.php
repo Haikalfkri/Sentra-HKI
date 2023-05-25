@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>SIHAKI</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/theme/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/theme/assets/img/site.webmanifest">
+    <title>Masuk | SIHAKI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,30 +18,34 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(/themelogin/img/bg2.jpg);">
+<body class="img js-fullheight" style="background-image: url(/themelogin/img/bg3.jpg);">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <h2 class="mb-4 text-center text-white">Login</h2>
-                        <form action="#" class="signin-form">
+                        <h1 class="mb-4 text-center text-white"><b>SIHAKI</b></h1>
+                        <p style="margin-top: -20px; margin-bottom: 20px; text-align:center">(Sistem Informasi Manajemen Sentra HKI)</p>
+                        <form action="{{ route('login') }} " method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="NIK" required>
+                                <input type="text" class="form-control" name="username" placeholder="Nomor Induk Karyawan" required>
                             </div>
                             <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Password"
-                                    required>
-                                <span toggle="#password-field"
-                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                <input id="password-field" type="password" name="password" class="form-control" placeholder="Kata Sandi" required>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
-                                <button type="submit" onclick="location.href='../admin/dashboard'"
-                                    class="form-control bg-primary px-3">Sign In</button>
+                                <button type="submit" class="form-control bg-primary px-3">Masuk</button>
                             </div>
+                            @if ($errors->has('login_failed'))
+                                <div class="alert alert-danger">
+                                    {{ $errors->first('login_failed') }}
+                                </div>
+                            @endif
                             <div class="form-group d-md-flex">
                                 <div class="w-50">
-                                    <label class="checkbox-wrap checkbox-primary">Remember Me
+                                    <label class="checkbox-wrap checkbox-primary">Ingat saya
                                         <input type="checkbox" checked>
                                         <span class="checkmark"></span>
                                     </label>

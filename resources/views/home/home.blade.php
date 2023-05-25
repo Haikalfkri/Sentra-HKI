@@ -3,6 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/theme/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/theme/assets/img/site.webmanifest">
     <title>SIHAKI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -43,7 +47,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn bg-transparent" data-wow-delay="0.1s">
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small class="text-white"><i class="fa fa-map-marker-alt text-primary me-2"></i>Batam Centre, Jl. Ahmad
@@ -66,9 +70,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-5 p-lg-0" >
-                    <a href="#home" class="nav-item nav-link">Beranda</a>
-                    <a href="../login" class="nav-item nav-link">Permohonan</a>
-                    <a href="#about" class="nav-item nav-link">Tentang</a>
+                    <a href="#home" class="nav-item nav-link text-primary ">Beranda</a>
+                    <a href="../login" class="nav-item nav-link text-primary ">Permohonan</a>
+                    <a href="#about" class="nav-item nav-link text-primary ">Tentang</a>
                 </div>
             </div>
         </nav>
@@ -105,13 +109,13 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div id="about" class="container-xxl py-5">
-        <div class="container mt-lg-3 mb-3">
+    <div id="about" class="container-xxl py-1">
+        <div class="container mt-lg-2 mb-2">
             <div class="container" style="display: flex; justify-content: space-between;">
                 <div>
-                    <img src="theme/assets/img/logo-ki-web.jpg" style="width: 600px; height: 500px" alt="">
+                    <img src="theme/assets/img/logo-ki-web.jpg" style="width: 500px; height: 350px" alt="">
                 </div>
-                <div class="mb-5 justify-content-center text-center pt-4" style="width: 500px">
+                <div class="mb-5 justify-content-center text-center pt-4" style="width: 500px"><br>
                     <h2 class="section-title text-center mb-3">Pusat Hak Kekayaan Intelektual (HKI)</h2>
                     <p>Pusat HKI memiliki fungsi melayani para peneliti dan inventor dalam konsultasi dan pengurusan
                         HKI, membantu percepatan perolehan HKI atas hasil-hasil penelitian dan PPM sivitas akademika USD

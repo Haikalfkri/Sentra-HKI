@@ -247,6 +247,11 @@ strong {
   font-weight: 700;
 }
 
+small-btn
+.small-btn {
+  width: 20px; /* Ubah ukuran sesuai dengan kebutuhan Anda */
+}
+
 small,
 .small {
   font-size: 0.875em;
@@ -2519,6 +2524,10 @@ progress {
   border-top-width: 0;
 }
 
+.table-striped {
+    background-color: #fff; /* Latar belakang putih */
+}
+
 .table-striped>tbody>tr:nth-of-type(odd)>* {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
@@ -3733,20 +3742,22 @@ fieldset:disabled .btn {
 
 .btn-warning {
   --bs-btn-color: #000;
-  --bs-btn-bg: #fb6340;
-  --bs-btn-border-color: #fb6340;
+  --bs-btn-bg: #FFA500;
+  --bs-btn-border-color: #FFA500;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #fc7a5d;
-  --bs-btn-hover-border-color: #fb7353;
-  --bs-btn-focus-shadow-rgb: 213, 84, 54;
+  --bs-btn-hover-bg: #FF8C00;
+  --bs-btn-hover-border-color: #FFA500;
+  --bs-btn-focus-shadow-rgb: 255, 165, 0;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #fc8266;
-  --bs-btn-active-border-color: #fb7353;
+  --bs-btn-active-bg: #FF7F00;
+  --bs-btn-active-border-color: #FFA500;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #fb6340;
-  --bs-btn-disabled-border-color: #fb6340;
+  --bs-btn-disabled-bg: #FFA500;
+  --bs-btn-disabled-border-color: #FFA500;
 }
+
+
 
 .btn-danger {
   --bs-btn-color: #000;

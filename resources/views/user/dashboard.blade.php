@@ -2,7 +2,8 @@
 
 
 @section('container')
-    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+<h3 class="text-white position-absolute top start-0 translate-middle-y mt-1 ms-3"><b>Selamat Datang di Sistem Informasi Manajemen Sentra HKI</b></h3>
+    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4"><br><br>
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
@@ -10,7 +11,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
                             <h5 class="font-weight-bolder">
-                                234
+                                2
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Lengkap</span>
@@ -26,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4"><br><br>
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
@@ -34,7 +35,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
                             <h5 class="font-weight-bolder">
-                                100
+                                2
                             </h5>
                             <p class="mb-0">
                                 <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
@@ -50,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4"><br><br>
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
@@ -58,7 +59,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Diproses</p>
                             <h5 class="font-weight-bolder">
-                                34
+                                3
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Diproses</span>
@@ -74,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div style="" class="col-xl-3 col-sm-6 mb-xl-0 mb-4"><br><br>
         <div class="card">
             <div class="card-body p-3">
                 <div class="row">
@@ -82,7 +83,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Total ajuan</p>
                             <h5 class="font-weight-bolder">
-                                73
+                                7
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Total ajuan</span>

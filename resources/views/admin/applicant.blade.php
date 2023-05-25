@@ -1,6 +1,9 @@
 @extends('admin.layouts.main')
 
 @section('container')
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-white">Data Pengajuan HKI</h1>
+        </div>
     <div class="card p-2">
         <div class="card-body text-center">
             <div class="row">
@@ -12,15 +15,17 @@
                 </div>
                 <form action="">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table" id="dataTable" border="1">
                             <thead>
-                                <th scope="col">No</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nama Karya</th>
-                                <th scope="col">Tipe</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Tinjauan</th>
-                                <th scope="col">Status</th>
+                                <tr class="table-info">
+                                    <th scope="col">No</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nama Karya</th>
+                                    <th scope="col">Tipe</th>
+                                    <th scope="col">Tanggal</th>
+                                    <th scope="col">Tinjauan</th>
+                                    <th scope="col">Status</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
@@ -37,7 +42,7 @@
                                             Diproses</span></td>
                                 </tr>
                                 <tr>
-                                    <td scope="row">1</td>
+                                    <td scope="row">2</td>
                                     <td>4342201016</td>
                                     <td>Sentra HKI</td>
                                     <td>Hak Cipta</td>
@@ -50,7 +55,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td scope="row">1</td>
+                                    <td scope="row">3</td>
                                     <td>43412981319</td>
                                     <td>Sentra HKI</td>
                                     <td>Hak Cipta</td>
@@ -64,9 +69,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
     </div>
 @endsection

@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/theme/assets/img/favicon-16x16.png">
     <link rel="manifest" href="/theme/assets/img/site.webmanifest">
     <title>
-        Sentra HKI
+       SIHAKI
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -21,6 +21,7 @@
     <link href="/theme/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -46,7 +47,7 @@
                     <a class="nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}" href="dashboard">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                            <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Beranda</span>
                     </a>
@@ -57,14 +58,14 @@
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Profil</span>
+                        <span class="nav-link-text  ms-1">Profil</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('user/form') ? 'active' : '' }}" href="form">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+                            <i class="ni ni-single-copy-04 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Form</span>
                     </a>
@@ -73,7 +74,7 @@
                     <a class="nav-link {{ request()->is('user/status') ? 'active' : '' }}" href="status">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-bell-55 text-warning text-sm opacity-10"></i>
+                            <i class="ni ni-bell-55 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Status</span>
                     </a>
@@ -83,9 +84,9 @@
                     <a class="nav-link" href="../home">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fa fa-home text-warning text-sm opacity-10"></i>
+                            <i class="fa fa-home text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Rumah</span>
+                        <span class="nav-link-text ms-1">Halaman Utama</span>
                     </a>
                 </li>
             </ul>
@@ -109,12 +110,14 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <ul class="navbar-nav  justify-content-end ms-md-auto pe-md-3 d-flex align-items-center">
                         <li class="nav-item d-flex align-items-center">
-
-                            <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-sign-out me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
 
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
@@ -138,7 +141,6 @@
         </div>
 
     </main>
-
 
     <!--   Core JS Files   -->
     <script src="/theme/assets/js/core/popper.min.js"></script>

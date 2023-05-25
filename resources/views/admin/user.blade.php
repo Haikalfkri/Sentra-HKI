@@ -1,23 +1,27 @@
 @extends('admin.layouts.main')
 
 @section('container')
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-white">Data Pengguna</h1>
+        </div>
     <div class="card p-2">
         <div class="card-body text-center">
-
             <div class="row">
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary input-group w-10 align-self-end" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" style="background-color: #0D6EFD
-                        ">
-                        <i class="fa fa-plus mt-1" style="margin-left: -5px;"><span> Tambah</span></i>
+                    <button type="button" class="btn btn-primary input-group w-10 align-self-end" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #0D6EFD; font-family: 'Helvetica Neue', Arial, sans-serif;">
+                        <i class="fa fa-plus mt-1"><span style="margin-left: 10px;">Tambah</span></i>
                     </button>
-
-                    <div class="input-group w-20 mb-3 d-flex">
-                        <input type="text" class="form-control align-self-start" placeholder="Type here...">
-                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    </div>
-
+                    <form action="/admin/user" method="GET" class="input-group w-20 mb-3 d-flex">
+                        <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('q') }}">
+                        <button type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    </form>
                 </div>
+
+                @if(session('notifikasi'))
+                    <div class="alert alert-{{ session('type') }}" style="text-align: center; color: white;" >
+                        {{ session('notifikasi') }}
+                    </div>
+                @endif
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -26,96 +30,116 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Pengguna</h5>
-                                <span class="close" data-bs-dismiss="modal" aria-label="Close"aria-hidden="true"
-                                    style="cursor: pointer;"><i class="fa fa-times"></i></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
+                        <form action="/admin/user/add" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
-                                <form action="">
-
-                                    <div class="form-group">
-                                        <div class="form-group" style="text-align: left">
-                                            <label for="username">NIK</label>
-                                            <input type="text" class="form-control" id="username" required>
-                                        </div>
-                                        <div class="form-group" style="text-align: left">
-                                            <label for="pwd">Nama</label>
-                                            <input type="password" class="form-control" id="pwd" required>
-                                        </div>
-                                        <div class="form-group" style="text-align: left">
-                                            <label for="pwd">Email</label>
-                                            <input type="password" class="form-control" id="pwd" required>
-                                        </div>
-                                        <div class="form-group" style="text-align: left">
-                                            <label for="pwd">No.Telepon</label>
-                                            <input type="password" class="form-control" id="pwd" required>
-                                        </div>
-                                        <div class="form-group" style="text-align: left">
-                                            <label for="role">Sebagai</label>
-                                            <select id="option" class="form-select" aria-label="Default select example">
-                                                <option selected>-- Pilih --</option>
-                                                <option value="1">Ultraman</option>
-                                                <option value="1">Power Ranger</option>
-                                                <option value="1">Kamen Raider</option>
-                                            </select>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-group" style="text-align: left">
+                                        <label for="username">Nomor Induk Karyawan</label>
+                                        <input type="text" class="form-control" id="username" name="username" required>
                                     </div>
+                                    <div class="form-group" style="text-align: left">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" id="nama" name="nama" required>
+                                    </div>
+                                    <div class="form-group" style="text-align: left">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                    </div>
+                                    <div class="form-group" style="text-align: left">
+                                        <label for="role">Sebagai</label>
+                                        <select id="role" class="form-select" name="role" aria-label="Default select example" required>
+                                            <option value="" selected>-- Pilih --</option>
+                                            <option value="pemohon">Pemohon</option>
+                                            <option value="admin">Admin</option>  
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
-                                </form>
-                            </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Batal</button>
-                                <button type="button" class="btn"
-                                    style="background-color: #0D6EFD; color:#FFF;
-                                "><i
-                                        class="fas fa-save"></i> Simpan</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Batal</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: #0D6EFD; color:#FFF;"><i class="fas fa-save"></i> Simpan</button>
                             </div>
+                        </form>
+
                         </div>
                     </div>
                 </div>
 
-
-                <form action="">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <th scope="col">No</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Alamat</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">No Hp</th>
-                                <th scope="col">Aksi</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">1</td>
-                                    <td>4342201016</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Mahasiswa</td>
-                                    <td></td>
-                                    <td><a href="" type="button" class="btn btn-danger"><i class="fa fa-trash"
-                                                aria-hidden="true"></i></td></a>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>434220015</td>
-                                    <td>Alif</td>
-                                    <td>alif_jr@gmail.com</td>
-                                    <td>Batam Kota</td>
-                                    <td>Mahasiswa</td>
-                                    <td>0123456789</td>
-                                    <td><a href="" type="button" class="btn btn-danger"><i class="fa fa-trash"
-                                                aria-hidden="true"></i></td></a>
-                                </tr>
-                            </tbody>
-                        </table>
-                </form>
-            </div>
-        </div>
+<form action="">
+@if($errors->has('username'))
+    <div class="alert alert-danger" style="text-align: center; color: white;">
+        {{ $errors->first('username') }}
+    </div>
+@endif
+@if(session('success'))
+    <div class="alert alert-danger" style="text-align: center; color: white;">
+    {{ session('success') }}
+    </div>
+@endif
+    <div class="table-responsive">
+        <table class="table" id="dataTable" border="1">
+            <thead>
+                <tr class="table-info">
+                    <th scope="col">No</th>
+                    <th scope="col">Nomor Induk Karyawan</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Jabatan</th>
+                    <th scope="col">No HP</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Sebagai</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+              @isset($users)
+                    @forelse ($users as $index => $data)
+                        <tr>
+                            <td>{{ $index+1 }}</td>
+                            <td>{{ $data->username }}</td>
+                            <td>@if ($data->userProfile)
+                                {{ $data->userProfile->nama }}
+                                @endif</td>
+                            <td>@if ($data->userProfile)
+                                {{ $data->userProfile->email }}
+                                @endif</td>
+                            <td>@if ($data->userProfile)
+                                {{ $data->userProfile->role }}
+                                @endif</td>
+                            <td>@if ($data->userProfile)
+                                {{ $data->userProfile->no_hp }}
+                                @endif</td>
+                            <td>@if ($data->userProfile)
+                                {{ $data->userProfile->alamat }}
+                                @endif</td>
+                            <td>{{ $data->role }}</td>
+                            <td>
+                                <form id="delete-form-{{ $data->id_users }}" action="{{ route('users.destroy', ['id_users' => $data->id_users]) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus pengguna ini?')) document.getElementById('delete-form-{{ $data->id_users }}').submit();">
+                                    <i class="fas fa-trash" aria-hidden="true"></i> Hapus
+                                </button>
+                                <a href="{{ route('users.edit', ['id' => $data->id_users]) }}" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>Ubah
+                                </a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6">Tidak ada data.</td>
+                        </tr>
+                    @endforelse
+                @endisset
+            </tbody>
+        </table>
+    </div>
+</form>
     </div>
     </div>
 @endsection

@@ -56,16 +56,16 @@
                     <a class="nav-link {{ request()->is('admin/applicant') ? 'active' : '' }}" href="applicant">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-folder-17 text-warning text-sm opacity-10"></i>
+                            <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Ajuan</span>
+                        <span class="nav-link-text ms-1">Rekap Ajuan</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('admin/user') ? 'active' : '' }}" href="user">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-single-02 text-warning text-sm opacity-10"></i>
+                            <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Pengguna</span>
                     </a>
@@ -75,9 +75,9 @@
                     <a class="nav-link" href="../home">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fa fa-home text-warning text-sm opacity-10"></i>
+                            <i class="fa fa-home text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Rumah</span>
+                        <span class="nav-link-text ms-1">Halaman Utama</span>
                     </a>
                 </li>
             </ul>
@@ -101,10 +101,14 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <ul class="navbar-nav  justify-content-end ms-md-auto pe-md-3 d-flex align-items-center">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-sign-out me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Keluar</span>
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
