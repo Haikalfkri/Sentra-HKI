@@ -19,9 +19,8 @@
                             <thead>
                                 <tr class="table-info">
                                     <th scope="col">No</th>
-                                    <th scope="col">ID</th>
+                                    <th scope="col">NIK</th>
                                     <th scope="col">Nama Karya</th>
-                                    <th scope="col">Tipe</th>
                                     <th scope="col">Tanggal</th>
                                     <th scope="col">Tinjauan</th>
                                     <th scope="col">Status</th>
@@ -32,7 +31,6 @@
                                     <td scope="row">1</td>
                                     <td>4342201016</td>
                                     <td>Sentra HKI</td>
-                                    <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
@@ -45,7 +43,6 @@
                                     <td scope="row">2</td>
                                     <td>4342201016</td>
                                     <td>Sentra HKI</td>
-                                    <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
@@ -58,7 +55,6 @@
                                     <td scope="row">3</td>
                                     <td>43412981319</td>
                                     <td>Sentra HKI</td>
-                                    <td>Hak Cipta</td>
                                     <td>12/12/2022</td>
                                     <td>
                                         <!-- Button trigger modal -->
