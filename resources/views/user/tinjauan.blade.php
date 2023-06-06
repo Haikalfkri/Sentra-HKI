@@ -5,44 +5,110 @@
         <div class="card-body text-center">
             <div class="row">
                 <div class="float-end">
-                    <a href="status" class="btn btn-primary float-lg-start mb-5"><i
-                            class="fa fa-arrow-left"aria-hidden="true"></i> Kembali</a>
+                    <a href="{{ route('user.kembali') }}" class="btn btn-primary float-lg-start mb-5">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali
+                    </a>
                 </div>
                 <!-- Table -->
                 <form action="">
                     <div class="table-responsive">
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover table-bordered" id="dataTable" border="1">
                             <thead>
-                                <th scope="col">No</th>
-                                <th scope="col">Persyaratan</th>
-                                <th scope="col">Berkas</th>
-                                <th scope="col">Aksi</th>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama Persyaratan</th>
+                                    <th scope="col">Berkas</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</td>
-                                    <th>KTP</td>
-                                    <th>
-                                        <a href="" class="btn btn-info btn-sm"><i class="fa fa-eye fa-lg"
-                                                aria-hidden="true"></i>
-                                            Lihat</a>
+                                @if ($berkas)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Formulir Pendaftaran</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->formulir_pendaftaran) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
                                         </td>
                                         <td>
-                                        <a href="" class="btn btn-secondary btn-sm mr-1 float-left"><i class="fas fa-edit"></i> Ubah</a>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'formulir_pendaftaran']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
                                         </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</td>
-                                    <th>KTM</td>
-                                    <th>
-                                        <a href="" class="btn btn-info btn-sm"><i class="fa fa-eye fa-lg"
-                                                aria-hidden="true"></i>
-                                            Lihat</a>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Surat Pernyataan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pernyataan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
                                         </td>
                                         <td>
-                                        <a href="" class="btn btn-secondary btn-sm mr-1 float-left"><i class="fas fa-edit"></i> Ubah</a>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pernyataan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
                                         </td>
-                                </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Surat Pengalihan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pengalihan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pengalihan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Scan KTP</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->ktp) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'ktp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>NPWP</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->npwp) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'npwp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
+                                        </td>
+                                    </tr>
+                                                                        <tr>
+                                        <td>6</td>
+                                        <td>Contoh Ciptaan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->contoh_ciptaan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'contoh_ciptaan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                <i class="fas fa-edit"></i> Ubah
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more rows for other berkas -->
+                                @endif
                             </tbody>
                         </table>
                     </div>

@@ -10,9 +10,7 @@
                     <div class="col-8">
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
-                            <h5 class="font-weight-bolder">
-                                2
-                            </h5>
+                            <h5 class="font-weight-bolder">{{ isset($lengkapCount) ? $lengkapCount : '0' }}</h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Lengkap</span>
                             </p>
@@ -34,9 +32,7 @@
                     <div class="col-8">
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
-                            <h5 class="font-weight-bolder">
-                                2
-                            </h5>
+                            <h5 class="font-weight-bolder">{{ isset($belumLengkapCount) ? $belumLengkapCount : '0' }}</h5>
                             <p class="mb-0">
                                 <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
                             </p>
@@ -58,9 +54,7 @@
                     <div class="col-8">
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Diproses</p>
-                            <h5 class="font-weight-bolder">
-                                2
-                            </h5>
+                            <h5 class="font-weight-bolder">{{ isset($diprosesCount) ? $diprosesCount : '0' }}</h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Diproses</span>
                             </p>
@@ -82,9 +76,7 @@
                     <div class="col-8">
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Total ajuan</p>
-                            <h5 class="font-weight-bolder">
-                                6
-                            </h5>
+                            <h5 class="font-weight-bolder">{{ isset($totalAjuanCount) ? $totalAjuanCount : '0' }}</h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Total ajuan</span>
                             </p>

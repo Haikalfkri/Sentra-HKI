@@ -13,8 +13,13 @@ class Berkas extends Model
     protected $primaryKey = 'id_berkas';
     protected $fillable = [
         'id_pengajuanhki',
-        'nama_berkas',
         'file_path',
+        'formulir_pendaftaran',
+        'surat_pernyataan',
+        'surat_pengalihan',
+        'ktp',
+        'npwp',
+        'contoh_ciptaan',
     ];
 
     public function pengajuanHKI()

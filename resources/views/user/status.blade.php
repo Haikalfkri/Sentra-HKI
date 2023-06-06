@@ -15,16 +15,15 @@
             </div>
             <form action="">
                 <div class="table-responsive">
-                    <table class="table" id="dataTable" border="1">
+                    <table class="table table-hover" id="dataTable" border="1">
                         <thead>
                             <tr class="table-info">
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Karya</th>
-                                <th scope="col">Tipe</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Tinjau</th>
+                                <th scope="col">Tanggal Pengajuan</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Keterangan</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,22 +32,37 @@
                                     <tr>
                                         <td>{{ $index+1 }}</td>
                                         <td>{{ $data->judul_hki }}</td>
-                                        <td>{{ $data->jenis_hki }}</td>
                                         <td>{{ $data->tgl_pengajuan }}</td>
                                         <td>
-                                            <!-- Button trigger modal -->
-                                            <a href="tinjauan" class="btn btn-primary btn-sm small-btn"><i class="fa fa-eye"></i> Lihat</a>
-                                        </td>
-                                        <td>
-                                            @if ($data->status == 'Diproses')
-                                                <span class="badge badge-warning" style="background-color: #FFED00">{{ $data->status }}</span>
-                                            @elseif ($data->status == 'Belum Lengkap')
-                                                <span class="badge badge-danger" style="background-color: #DF2E38">{{ $data->status }}</span>
-                                            @elseif ($data->status == 'Lengkap')
-                                                <span class="badge badge-success" style="background-color: #03C988">{{ $data->status }}</span>
+                                            @if (isset($data->rekapPengajuan) && $data->rekapPengajuan->status == 'Diproses')
+                                                <span class="badge badge-warning" style="background-color: #FFED00">{{ $data->rekapPengajuan->status }}</span>
+                                            @elseif (isset($data->rekapPengajuan) && $data->rekapPengajuan->status == 'Belum Lengkap')
+                                                <span class="badge badge-danger" style="background-color: #DF2E38">{{ $data->rekapPengajuan->status }}</span>
+                                            @elseif (isset($data->rekapPengajuan) && $data->rekapPengajuan->status == 'Lengkap')
+                                                <span class="badge badge-success" style="background-color: #03C988">{{ $data->rekapPengajuan->status }}</span>
                                             @endif
                                         </td>
-                                        <td>{{ $data->deskripsi }}</td>
+                                        <td>
+                                            @if ($data->rekapPengajuan)
+                                                {{ $data->rekapPengajuan->keterangan }}
+                                            @else
+                                                -
+                                            @endif
+                                        </td>
+                                        <td> <!-- Tambah button hapus -->
+                                            <form id="delete-form-{{ $data->id_pengajuanhki }}" action="{{ route('user.hapus', ['id_pengajuanhki' => $data->id_pengajuanhki]) }}" method="POST" style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')) document.getElementById('delete-form-{{ $data->id_pengajuanhki }}').submit();">
+                                                    <i class="fas fa-trash" aria-hidden="true"></i> Hapus
+                                            </button>
+                                            @if ($data->berkas)
+                                                <a href="{{ route('user.tinjauan', ['id_berkas' => $data->berkas->id_berkas]) }}" class="btn btn-warning btn-sm">
+                                                    <i class="fa fa-edit fa-lg" aria-hidden="true"></i> edit
+                                                </a>
+                                            @endif
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>

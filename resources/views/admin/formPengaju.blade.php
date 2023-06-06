@@ -5,99 +5,168 @@
         <div class="card-body text-center">
             <div class="row">
                 <div class="float-end">
-                    <a href="applicant" class="btn btn-secondary float-lg-start mb-5"><i
-                            class="fa fa-arrow-left"aria-hidden="true"></i> Kembali</a>
-                    <a href="" class="btn btn-primary float-end mb-5">Download</a>
+                    <a href="{{ route('admin.index') }}" class="btn btn-secondary float-lg-start mb-5">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali
+                    </a>
+                    <a href="{{ route('admin.berkas.downloadAll') }}" class="btn btn-primary float-end mb-5">Download</a>
                 </div>
                 <!-- Table -->
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <td width="300">Email</td>
+                                <td width="5">:</td>
+                                <td>{{ $pengaju->userProfile->email ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nomor Induk Karyawan</td>
+                                <td>:</td>
+                                <td>{{ $pengaju->username ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>{{ $pengaju->userProfile->nama ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Sebagai</td>
+                                <td>:</td>
+                                <td>{{ $pengaju->userProfile->role ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Judul HKI</td>
+                                <td>:</td>
+                                <td>{{ $pengajuanHKI->judul_hki ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Uraian singkat Ciptaan</td>
+                                <td>:</td>
+                                <td>{{ $pengajuanHKI->deskripsi ?? '' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
                 <form action="">
                     <div class="table-responsive">
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover table-bordered" id="dataTable" border="1">
                             <thead>
-                                <th scope="col">No</th>
-                                <th scope="col">Persyaratan</th>
-                                <th scope="col">Berkas</th>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama Persyaratan</th>
+                                    <th scope="col">Berkas</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</td>
-                                    <th>KTP</td>
-                                    <th>
-                                        <a href="" class="btn btn-info btn-sm"><i class="fa fa-eye fa-lg"
-                                                aria-hidden="true"></i>
-                                            Lihat</a>
+                                @isset($berkas)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Formulir Pendaftaran</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->formulir_pendaftaran) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
                                         </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</td>
-                                    <th>KTM</td>
-                                    <th>
-                                        <a href="" class="btn btn-info btn-sm"><i class="fa fa-eye fa-lg"
-                                                aria-hidden="true"></i>
-                                            Lihat</a>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Surat Pernyataan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pernyataan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Surat Pengalihan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pengalihan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Scan KTP</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->ktp) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>NPWP</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->npwp) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
                                         </td>
 
-                                </tr>
+                                    </tr>
+                                                                        <tr>
+                                        <td>6</td>
+                                        <td>Contoh Ciptaan</td>
+                                        <td>
+                                            <a href="{{ asset('storage/berkas/' . $berkas->contoh_ciptaan) }}" class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more rows for other berkas -->
+                                @endisset
                             </tbody>
                         </table>
                     </div>
                 </form>
 
-                <!-- Button -->
-                <div>
-                    <div class="mt-5 float-end">
-                        <!-- Reject Button -->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#RejectBtn">Perbaikan</button>
-                        <div id="RejectBtn" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Deskripsi</h4>
-                                    </div>
-                                    <form action="">
-                                        <div class="modal-body">
-                                            <!-- Description -->
-
-                                            <div class="form-group">
-                                                <textarea class="form-control" rows="3" required></textarea>
-                                            </div>
-
-                                        </div>
-                                        <input type="submit" class="btn btn-primary" value="Simpan" style="float: right; margin-right: 10px;">
-                                    </form>
-                                </div>
+                <!-- Reject Button -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#RejectBtn">Perbaikan</button>
+                <div id="RejectBtn" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Deskripsi</h4>
                             </div>
-                        </div>
-
-                        <!-- Accept button -->
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#AcceptBtn">Terima</button>
-                        <div id="AcceptBtn" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Deskripsi</h4>
+                            <form action="{{ route('admin.berkas.reject', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
+                                @csrf
+                                <div class="modal-body">
+                                    <!-- Description -->
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="keterangan" rows="3" required></textarea>
                                     </div>
-                                    <form action="">
-                                        <div class="modal-body">
-                                            <!-- Description -->
-
-                                            <div class="form-group">
-                                                <textarea class="form-control" rows="3" required></textarea>
-                                            </div>
-
-                                        </div>
-                                        <input type="submit" class="btn btn-primary" value="Simpan" style="float: right; margin-right: 10px;">
-                                    </form>
                                 </div>
-                            </div>
+                                <input type="submit" class="btn btn-primary" value="Simpan" style="float: right; margin-right: 10px;">
+                            </form>
                         </div>
                     </div>
                 </div>
 
+                <!-- Accept button -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AcceptBtn">Terima</button>
+                <div id="AcceptBtn" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Deskripsi</h4>
+                            </div>
+                            <form action="{{ route('admin.berkas.accept', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
+                                @csrf
+                                <div class="modal-body">
+                                    <!-- Description -->
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="keterangan" rows="3" required></textarea>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Simpan" style="float: right; margin-right: 10px;">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

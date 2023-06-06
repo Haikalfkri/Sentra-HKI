@@ -11,7 +11,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
                             <h5 class="font-weight-bolder">
-                                2
+                                {{ isset($lengkapCount) ? $lengkapCount : 0 }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Lengkap</span>
@@ -35,7 +35,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
                             <h5 class="font-weight-bolder">
-                                2
+                                {{ isset($belumLengkapCount) ? $belumLengkapCount : 0 }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
@@ -59,7 +59,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Diproses</p>
                             <h5 class="font-weight-bolder">
-                                3
+                                {{ isset($diprosesCount) ? $diprosesCount : 0 }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Diproses</span>
@@ -83,7 +83,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Total ajuan</p>
                             <h5 class="font-weight-bolder">
-                                7
+                                {{ isset($totalCount) ? $totalCount : 0 }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Total ajuan</span>

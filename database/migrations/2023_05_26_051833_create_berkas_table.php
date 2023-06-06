@@ -16,8 +16,13 @@ class CreateBerkasTable extends Migration
         Schema::create('berkas', function (Blueprint $table) {
             $table->increments('id_berkas');
             $table->unsignedInteger('id_pengajuanhki');
-            $table->string('nama_berkas', 256);
             $table->string('file_path')->nullable();
+            $table->string('formulir_pendaftaran')->nullable();
+            $table->string('surat_pernyataan')->nullable();
+            $table->string('surat_pengalihan')->nullable();
+            $table->string('ktp')->nullable();
+            $table->string('npwp')->nullable();
+            $table->string('contoh_ciptaan')->nullable();
             $table->timestamps();
 
             $table->foreign('id_pengajuanhki')->references('id_pengajuanhki')->on('pengajuan_hki')->onDelete('cascade');

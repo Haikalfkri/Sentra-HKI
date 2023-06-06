@@ -35,7 +35,7 @@
                                 <textarea class="form-control" id="uraian" name="deskripsi" rows="4" placeholder="Deskripsi" required>{{ old('deskripsi', $pengajuanHKI->deskripsi ?? '') }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="department">Sebagai</label>
+                                <label for="department">Jabatan</label>
                                 <input type="text" class="form-control" id="department" placeholder="Dosen, Laboran, Karyawan" value="{{ Auth::user()->userProfile->role }}" readonly>
                             </div>
                             <div class="col-md-12">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="form-group">
+                        <div class="form-group">
                             <label for="pengalihan" class="form-label">Formulir permohonan pendaftaran online <span class="text-danger"> (format .doc atau .docx)*</span></label>
                             <div class="input-group mb-3">
                                 <input style="cursor:pointer;" class="form-control" id="pengalihan" type="file" name="file_1[]" required>
@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <label for="contohCiptaan" class="form-label">Contoh Ciptaan<span class="text-danger"> (lampiran disesuaikan dengan halaman terakhir form pendaftaran)*</span></label>
                             <div class="input-group mb-5">
-                                <input style="cursor:pointer;" class="form-control" id="contohCiptaan" type="file" name="file_5[]" required multiple>
+                                <input style="cursor:pointer;" class="form-control" id="contohCiptaan" type="file" name="file_6[]" required multiple>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-default btn-primary btn-fill float-end" style="cursor:pointer;">Simpan</button>
