@@ -30,6 +30,11 @@ class User extends Authenticatable
         return $this->hasOne(UserProfile::class, 'id_users');
     }
 
+    public function pengajuanHKIs()
+    {
+        return $this->hasMany(PengajuanHKI::class, 'id_users', 'id_users');
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.

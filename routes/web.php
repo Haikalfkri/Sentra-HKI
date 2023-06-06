@@ -7,6 +7,8 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengajuanHKIController;
+use App\Http\Controllers\RekapPengajuanHKIController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,6 +68,24 @@ Route::get('/pengajuan/show', [PengajuanHKIController::class, 'show'])->name('pe
 Route::get('/pengajuan/create', [PengajuanHKIController::class, 'create'])->name('pengajuan.create');
 Route::post('/pengajuan/store', [PengajuanHKIController::class, 'store'])->name('pengajuan.store');
 Route::get('/user/status', [PengajuanHKIController::class, 'index'])->name('user.status');
+Route::get('/user/tinjauan/{id_berkas}', [PengajuanHKIController::class, 'tinjauan'])->name('user.tinjauan');
+Route::get('user/kembali', [PengajuanHKIController::class, 'redirectToStatus'])->name('user.kembali');
+Route::get('user/balik/{id_berkas}', [PengajuanHKIController::class, 'redirectToTinjauan'])->name('user.balik');
+Route::get('/berkas/edit/{id_berkas}/{berkasField}', [PengajuanHKIController::class, 'edit'])->name('berkas.edit');
+Route::put('/berkas/update/{id_berkas}/{berkasField}', [PengajuanHKIController::class, 'update'])->name('berkas.update');
+Route::get('admin/applicant', [RekapPengajuanHKIController::class, 'index'])->name('admin.index');
+Route::get('admin/tinjauan/{id_berkas}', [RekapPengajuanHKIController::class, 'tinjauan'])->name('admin.tinjauan');
+Route::post('/admin/berkas/reject/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'reject'])->name('admin.berkas.reject');
+Route::post('/admin/berkas/accept/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'accept'])->name('admin.berkas.accept');
+Route::get('/create-zip', [RekapPengajuanHKIController::class, 'createZipFile']);
+Route::get('download-all-berkas', [RekapPengajuanHKIController::class, 'downloadAllBerkas'])->name('admin.berkas.downloadAll');
+
+Route::get('/dashboard', [UserController::class, 'index'])->name('user.dashboard');
+
+Route::delete('/hapus/{id_pengajuanhki}', [PengajuanHKIController::class, 'hapus'])->name('user.hapus');
+
+
+
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 

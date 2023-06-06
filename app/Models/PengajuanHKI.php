@@ -24,4 +24,14 @@ class PengajuanHKI extends Model
     {
         return $this->belongsTo(User::class, 'id_users');
     }
+    
+    public function berkas()
+    {
+        return $this->hasOne(Berkas::class, 'id_pengajuanhki', 'id_pengajuanhki');
+    }
+    
+    public function rekapPengajuan()
+    {
+        return $this->hasOne(RekapPengajuan::class, 'id_pengajuanhki', 'id_pengajuanhki');
+    }
 }
