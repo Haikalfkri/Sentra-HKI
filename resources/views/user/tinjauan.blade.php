@@ -27,7 +27,7 @@
                                         <td>1</td>
                                         <td>Formulir Pendaftaran</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->formulir_pendaftaran) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->formulir_pendaftaran) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>
@@ -41,7 +41,7 @@
                                         <td>2</td>
                                         <td>Surat Pernyataan</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pernyataan) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pernyataan) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>
@@ -55,7 +55,7 @@
                                         <td>3</td>
                                         <td>Surat Pengalihan</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pengalihan) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->surat_pengalihan) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>
@@ -69,7 +69,7 @@
                                         <td>4</td>
                                         <td>Scan KTP</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->ktp) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->ktp) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>
@@ -83,7 +83,7 @@
                                         <td>5</td>
                                         <td>NPWP</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->npwp) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->npwp) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>
@@ -97,7 +97,7 @@
                                         <td>6</td>
                                         <td>Contoh Ciptaan</td>
                                         <td>
-                                            <a href="{{ asset('storage/berkas/' . $berkas->contoh_ciptaan) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ asset('storage/berkas/' . $berkas->contoh_ciptaan) }}" target="_blank" class="btn btn-info btn-sm">
                                                 <i class="fa fa-eye fa-lg" aria-hidden="true"></i> Lihat
                                             </a>
                                         </td>

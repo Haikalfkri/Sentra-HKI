@@ -37,6 +37,7 @@
                                 <div class="form-group">
                                     <label for="depart" class="form-control-label">Jabatan</label>
                                     <select class="form-control" id="depart" name="role" required>
+                                        <option value="" disabled selected>Pilih Jabatan</option>
                                         <option value="Dosen" {{ (isset($userProfile) && $userProfile->role == 'Dosen') ? 'selected' : '' }}>Dosen</option>
                                         <option value="Laboran" {{ (isset($userProfile) && $userProfile->role == 'Laboran') ? 'selected' : '' }}>Laboran</option>
                                         <option value="Karyawan" {{ (isset($userProfile) && $userProfile->role == 'Karyawan') ? 'selected' : '' }}>Karyawan</option>
@@ -45,7 +46,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="nomor" class="form-control-label">Nomor Hp</label>
+                                    <label for="nomor" class="form-control-label">Nomor HP/WhatsApp yang aktif</label>
                                     <input class="form-control" id="nomor" type="text" name="no_hp" value="{{ $errors->has('no_hp') ? old('no_hp') : (isset($userProfile) ? $userProfile->no_hp : '') }}" required>
                                 </div>
                             </div>
