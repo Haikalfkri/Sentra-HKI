@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RekapPengajuan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;\
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 
@@ -57,5 +57,4 @@ class UserController extends Controller
         // Pass the monthly data to the view
         return view('user.layouts.main')->with('monthlyData', $monthlyData);
     }
-
 }
