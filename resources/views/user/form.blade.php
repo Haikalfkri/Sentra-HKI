@@ -19,15 +19,19 @@
                                 <input type="text" class="form-control" id="id" placeholder="cth : 113053" value="{{ Auth::user()->username }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="nama">Nama</label>
+                                <label for="nama">Nama Pengusul</label>
                                 <input type="text" class="form-control" id="nama" placeholder="" value="{{ Auth::user()->userProfile->nama }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="date">Tanggal</label>
+                                <label for="nomor">Nomor HP/WhatsApp yang aktif</label>
+                                <input type="text" class="form-control" id="no_hp" placeholder="" value="{{ Auth::user()->userProfile->no_hp }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Tanggal Pengajuan</label>
                                 <input type="date" class="form-control" id="date" name="tgl_pengajuan" value="{{ old('tgl_pengajuan', $pengajuanHKI->tgl_pengajuan ?? '') }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="application">Judul HKI</label>
+                                <label for="application">Judul usulan</label>
                                 <input type="text" class="form-control" id="application" placeholder="Masukkan Judul HKI" name="judul_hki" required value="{{ old('judul_hki', $pengajuanHKI->judul_hki ?? '') }}" >
                             </div>
                             <div class="form-group">

@@ -19,7 +19,7 @@
                         <thead>
                             <tr class="table-info">
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Karya</th>
+                                <th scope="col">Judul HKI</th>
                                 <th scope="col">Tanggal Pengajuan</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Keterangan</th>

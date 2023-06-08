@@ -81,7 +81,7 @@ Route::get('/create-zip', [RekapPengajuanHKIController::class, 'createZipFile'])
 Route::get('download-all-berkas', [RekapPengajuanHKIController::class, 'downloadAllBerkas'])->name('admin.berkas.downloadAll');
 
 Route::get('/dashboard', [UserController::class, 'index'])->name('user.dashboard');
-
+Route::get('/dashboard', [UserController::class, 'showMainLayout'])->name('dashboard');
 Route::delete('/hapus/{id_pengajuanhki}', [PengajuanHKIController::class, 'hapus'])->name('user.hapus');
 
 
