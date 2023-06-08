@@ -90,3 +90,9 @@ Route::delete('/hapus/{id_pengajuanhki}', [PengajuanHKIController::class, 'hapus
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+
+// routing download file
+use App\Http\Controllers\FileController;
+
+Route::get('/download/{filename}', [FileController::class, 'download'])->name('file.download');
+
