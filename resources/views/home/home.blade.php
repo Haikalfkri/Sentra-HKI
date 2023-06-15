@@ -37,7 +37,7 @@
     <link href="homePage/css/style.css" rel="stylesheet">
 </head>
 
-<body id="home">
+<body id="home" style="overflow-x: hidden;">
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -242,21 +242,6 @@
                     </svg>
                     <h3>Pengajuan HKI disetujui</h3>
                     <blockquote>Pengajuan HKI Anda telah disetujui setelah diverifikasi.</blockquote>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content timeline-card js--fadeInRight">
-                    <div class="timeline-img-header">
-                        <h2>Card Title</h2>
-                    </div>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias
-                        cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi
-                        amet in dolores. Alias, ullam.</p>
                 </div>
             </div>
         </div>

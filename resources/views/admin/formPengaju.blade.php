@@ -12,7 +12,7 @@
                 </div>
                 <!-- Table -->
                 <div class="col-md-12">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table">
                             <tr>
                                 <td width="300">Email</td>

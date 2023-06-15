@@ -422,8 +422,8 @@ h6,
       &:nth-child(even) {
 
           .timeline-content {
-              float: right;
-              padding: 40px 30px 10px 30px;
+                float: right;
+                padding: 40px 30px 10px 30px;
 
               .date {
                   right: auto;

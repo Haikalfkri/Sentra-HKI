@@ -8,17 +8,16 @@
         <div class="card-body text-center">
             <div class="row">
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary input-group w-10 align-self-end" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #0D6EFD; font-family: 'Helvetica Neue', Arial, sans-serif;">
+                    <button type="button" class="btn btn-primary input-group align-self-end" data-bs-toggle="modal" id="tambah" data-bs-target="#exampleModal" style="background-color: #0D6EFD; font-family: 'Helvetica Neue', Arial, sans-serif;">
                         <i class="fa fa-plus mt-0"><span style="margin-left: 2px;">Tambah</span></i>
                     </button>
-                    <form action="/admin/user" method="GET" class="input-group w-20 mb-3 d-flex">
-                        <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('q') }}">
-                        <button type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    <form action="/admin/user" method="GET" class="input-group w-20 mb-3 d-flex" id="search-form">
+                        <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('nama') }}" id="search-input">
                     </form>
                 </div>
 
                 @if(session('notifikasi'))
-                    <div class="alert alert-{{ session('type') }}" style="text-align: center; color: white;" >
+                    <div class="alert alert-{{ session('type') }}" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
                         {{ session('notifikasi') }}
                     </div>
                 @endif
@@ -71,12 +70,12 @@
 
 <form action="">
 @if($errors->has('username'))
-    <div class="alert alert-danger" style="text-align: center; color: white;">
+    <div class="alert alert-danger" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
         {{ $errors->first('username') }}
     </div>
 @endif
 @if(session('success'))
-    <div class="alert alert-danger" style="text-align: center; color: white;">
+    <div class="alert alert-danger" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
     {{ session('success') }}
     </div>
 @endif
