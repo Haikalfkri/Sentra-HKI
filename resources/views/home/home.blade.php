@@ -115,12 +115,12 @@
         <div class="container mt-lg-2 mb-2">
             <div class="container" style="display: flex; justify-content: space-between;">
 
-                <div class="container mb-5 justify-content-center text-center pt-4">
+                <div class="container my-4 justify-content-center text-center pt-4">
                     <div class="row">
                         <div class="col-md-4">
                             <img src="theme/assets/img/logo-ki-web.jpg" class="responsive-image" alt="">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 pt-5">
                             <h2 class="section-title text-center mb-3">Pusat Hak Kekayaan Intelektual (HKI)</h2>
                             <p>Pusat HKI memiliki fungsi melayani para peneliti dan inventor dalam konsultasi dan
                                 pengurusan HKI, membantu percepatan perolehan HKI atas hasil-hasil penelitian dan PPM
@@ -136,7 +136,7 @@
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="0.3s">
                         <div class="h-100">
                             <div class="d-flex">
-                                <div class="flex-shrink-2 btn-lg-square bg-primary" style="border-radius: 80%;">
+                                <div class="flex-shrink-0 btn-lg-square  bg-primary" style="border-radius: 80%;">
                                     <i class="fa fa-users text-white"></i>
                                 </div>
                                 <div class="ps-3">
@@ -304,7 +304,7 @@
                 <h2 class="mb-5">LOKASI KAMI</h2>
             </div>
             <div class="interior_inner row">
-                <div class="col-lg-6 d-flex align-items-center flex-wrap" data-aos="fade-left" data-aos-offset="150"
+                <div class="col-lg-7 d-flex align-items-center flex-wrap" data-aos="fade-left" data-aos-offset="150"
                     data-aos-easing="ease-in-sine">
                     <div class="col-lg-11">
                         <div class='center-container-lokasi'>
@@ -319,12 +319,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-flex align-items-end mb-5" data-aos="fade-right" data-aos-offset="300"
+                <div class="col-lg-5 d-flex mb-5" data-aos="fade-right" data-aos-offset="300"
                     data-aos-easing="ease-in-sine">
-                    <iframe
+                    <iframe class="rounded"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15956.231689492266!2d104.0484619!3d1.1186351!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98921856ddfab%3A0xf9d9fc65ca00c9d!2sPoliteknik%20Negeri%20Batam!5e0!3m2!1sid!2sid!4v1686129400858!5m2!1sid!2sid"
                         width="500" height="380" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
