@@ -9,13 +9,15 @@
         <div class="row">
             <div>
                 <div class="input-group w-20 mb-3 d-flex float-end">
-                    <input type="text" class="form-control" placeholder="Type here...">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                    <form action="/admin/user" method="GET" id="search-form">
+                        <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('judul_hki') }}" id="search-input">
+                    </form>
+                    
                 </div>
             </div>
             <form action="">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="dataTable" border="1">
+                    <table class="table table-bordered" id="dataTable" border="1">
                         <thead>
                             <tr class="table-info">
                                 <th scope="col">No</th>

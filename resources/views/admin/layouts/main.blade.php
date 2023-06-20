@@ -22,6 +22,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="/theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
     <link rel="stylesheet" href="/theme/assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/theme/assets/css/admin.css">
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -206,6 +207,29 @@
         });
     </script>
 
+<script>
+    const searchInput = document.getElementById('search-input');
+    const tableRows = document.querySelectorAll('#dataTable tbody tr');
+
+    searchInput.addEventListener('input', function(e) {
+        const searchText = e.target.value.toLowerCase();
+
+        tableRows.forEach(function(row) {
+            const namaCell = row.querySelector('td:nth-child(3)');
+            const namaText = namaCell.textContent.toLowerCase();
+
+            if (namaText.includes(searchText)) {
+                namaCell.innerHTML = namaText.replace(new RegExp(searchText, 'gi'), function(match) {
+                    return '<span class="highlight">' + match + '</span>';
+                });
+                row.style.display = '';
+            } else {
+                namaCell.innerHTML = namaText;
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -18,14 +18,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-        use HasFactory;
+    use HasFactory;
     protected $table = 'users';
     protected $primaryKey = 'id_users';
     protected $fillable = [
         'username', 'password', 'role'
     ];
 
-   public function userProfile(): HasOne
+    public function userProfile(): HasOne
     {
         return $this->hasOne(UserProfile::class, 'id_users');
     }
@@ -54,5 +54,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isUser()
+    {
+        return $this->role === 'pemohon';
+    }
 }
