@@ -20,6 +20,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="/theme/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
+    <link id="pagestyle" href="/theme/assets/css/user.css" rel="stylesheet" />
     <link id="pagestyle" href="/theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
@@ -201,6 +202,27 @@
             }]
         });
     </script>
+
+<script>
+    const searchInput = document.querySelector('#search-input');
+    const dataTable = document.querySelector('#dataTable');
+    
+    searchInput.addEventListener('input', function() {
+        const searchText = searchInput.value.trim().toLowerCase();
+        const rows = dataTable.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const judulHKI = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            
+            if (judulHKI.includes(searchText)) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>

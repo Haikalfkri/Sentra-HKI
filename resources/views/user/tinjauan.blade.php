@@ -5,7 +5,7 @@
         <div class="card-body text-center">
             <div class="row">
                 <div class="float-end">
-                    <a href="{{ route('user.kembali') }}" class="btn btn-primary float-lg-start mb-5">
+                    <a href="{{ route('user.kembali') }}" class="btn btn-primary float-start mb-5">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali
                     </a>
                 </div>

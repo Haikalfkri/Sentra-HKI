@@ -1,0 +1,41 @@
+.highlighted {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Default styles for the "Tambah" button */
+#tambah {
+    background-color: #0D6EFD;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #FFF;
+  }
+  
+  /* Styles for small screens */
+  @media (max-width: 576px) {
+    #tambah {
+      width: 100px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Styles for medium screens */
+  @media (min-width: 576px) and (max-width: 768px) {
+    #tambah {
+      width: 70%;
+    }
+  }
+  
+  /* Styles for large screens */
+  @media (min-width: 768px) and (max-width: 992px) {
+    #tambah {
+      width: 20%;
+    }
+  }
+  
+  /* Styles for extra-large screens */
+  @media (min-width: 992px) {
+    #tambah {
+      width: 12%;
+    }
+  }
+  

@@ -16,7 +16,7 @@
             </div>
             <form action="">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="dataTable" border="1">
+                    <table class="table table-bordered" id="dataTable" border="1">
                         <thead>
                             <tr class="table-info">
                                 <th scope="col">No</th>

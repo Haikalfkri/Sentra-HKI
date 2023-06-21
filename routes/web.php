@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\AdminController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,7 +31,9 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::get('/home', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/home', [LandingController::class, 'index'])->name('landing.home');
 
+
 // Rute admin
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/applicant', function () {
@@ -88,3 +91,4 @@ Route::middleware(['auth', 'pemohon'])->group(function () {
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::get('/download/{filename}', [FileController::class, 'download'])->name('file.download')->middleware('guest');
+

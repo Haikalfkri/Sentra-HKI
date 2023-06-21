@@ -9,8 +9,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="input-group w-20 mb-4 float-end text-end">
-                    <input type="search" class="form-control" placeholder="Type here...">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                    <form action="/admin/user" method="GET" class="input-group d-flex" id="search-form">
+                        <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('judul_hki') }}" id="search-input">
+                    </form>
                 </div>
             </div>
         </div>

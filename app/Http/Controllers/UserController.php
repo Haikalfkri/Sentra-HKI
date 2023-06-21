@@ -71,6 +71,7 @@ public function showMainLayout()
     return view('user.layouts.main', ['chartData' => $chartData]);
 }
 
-
-
+        // Pass the monthly data to the view
+        return view('user.layouts.main')->with('monthlyData', $monthlyData);
+    }
 }
