@@ -26,4 +26,9 @@ class Berkas extends Model
     {
         return $this->belongsTo(PengajuanHKI::class, 'id_pengajuanhki', 'id_pengajuanhki');
     }
+
+    public function rekapPengajuan()
+    {
+        return $this->hasOne(RekapPengajuan::class, 'id_berkas');
+    }
 }

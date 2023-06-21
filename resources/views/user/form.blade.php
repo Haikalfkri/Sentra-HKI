@@ -10,6 +10,36 @@
                         <h4>Form Registrasi Hak Cipta</h4>
                         <hr class="horizontal dark mt-1 mb-1">
                         <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="type" class="form-control-label">Jenis Permohonan</label>
+                                        <select class="form-control" id="type" name="jenis_hki" readonly>
+                                            <option value="Hak Cipta" selected>Hak Cipta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                             <div class="form-group">
+                                <label for="jenis_ciptaan" class="form-control-label">Jenis Ciptaan</label>
+                                <select class="form-control" id="jenis_ciptaan" name="jenis_ciptaan">
+                                    <option value="" disabled selected>Pilih Jenis Ciptaan</option>
+                                    <option value="Karya Fotografi">Karya Fotografi</option>
+                                    <option value="Komposisi Musik">Komposisi Musik</option>
+                                    <option value="Karya Tulis">Karya Tulis</option>
+                                    <option value="Karya Lainnya">Karya Lainnya</option>
+                                    <option value="Karya Seni">Karya Seni</option>
+                                    <option value="Karya Audio Visual">Karya Audio Visual</option>
+                                    <option value="Karya Drama dan Koreografi">Karya Drama dan Koreografi</option>
+                                    <option value="Karya Rekaman">Karya Rekaman</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subjenis_ciptaan" class="form-control-label">Sub Jenis Ciptaan</label>
+                                <select class="form-control" id="subjenis_ciptaan" name="subjenis_ciptaan">
+                                    <option value="" disabled selected>Pilih Sub Jenis Ciptaan</option>
+                                    <!-- Sub Jenis Ciptaan akan ditampilkan berdasarkan pilihan Jenis Ciptaan -->
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email" placeholder="" value="{{ Auth::user()->userProfile->email }}" readonly>
@@ -41,14 +71,6 @@
                             <div class="form-group">
                                 <label for="department">Jabatan</label>
                                 <input type="text" class="form-control" id="department" placeholder="Dosen, Laboran, Karyawan" value="{{ Auth::user()->userProfile->role }}" readonly>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="type" class="form-control-label">Jenis Permohonan</label>
-                                    <select class="form-control" id="type" name="jenis_hki" required>
-                                        <option value="Hak Cipta" {{ old('jenis_hki', $pengajuanHKI->jenis_hki ?? '') === 'Hak Cipta' ? 'selected' : '' }}>Hak Cipta</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -95,4 +117,45 @@
             </div>
         </div>
     </div>
+
+<script>
+    // Mendapatkan elemen-elemen yang diperlukan
+    const jenisCiptaanSelect = document.getElementById('jenis_ciptaan');
+    const subjenisCiptaanSelect = document.getElementById('subjenis_ciptaan');
+
+    // Daftar subjenis ciptaan berdasarkan jenis ciptaan
+    const subjenisCiptaanOptions = {
+        'Karya Fotografi': ['Fotografi Pemandangan', 'Fotografi Potret', 'Fotografi Arsitektur', 'Fotografi Produk'],
+        'Komposisi Musik': ['Musik Klasik', 'Musik Pop', 'Musik Jazz', 'Musik Rock'],
+        'Karya Tulis': ['Buku Fiksi', 'Buku Non-Fiksi', 'Makalah Ilmiah', 'Artikel Jurnal'],
+        'Karya Lainnya': ['Desain Grafis', 'Patung dan Pahatan', 'Lukisan', 'Seni Kerajinan'],
+        'Karya Seni': ['Seni Patung', 'Seni Lukis', 'Seni Instalasi', 'Seni Multimedia'],
+        'Karya Audio Visual': ['Film', 'Video Musik', 'Animasi', 'Dokumenter'],
+        'Karya Drama dan Koreografi': ['Drama Teater', 'Tari Kontemporer', 'Tari Tradisional', 'Koreografi Ballet'],
+        'Karya Rekaman': ['Rekaman Lagu', 'Rekaman Podcast', 'Rekaman Audiobook', 'Rekaman Suara Ambient']
+    };
+
+    // Fungsi untuk mengubah opsi subjenis ciptaan berdasarkan pilihan jenis ciptaan
+    function updateSubjenisCiptaanOptions() {
+        const selectedJenisCiptaan = jenisCiptaanSelect.value;
+        const subjenisOptions = subjenisCiptaanOptions[selectedJenisCiptaan] || [];
+
+        // Menghapus opsi subjenis ciptaan yang ada
+        while (subjenisCiptaanSelect.options.length > 1) {
+            subjenisCiptaanSelect.remove(1);
+        }
+
+        // Menambahkan opsi subjenis ciptaan baru
+        for (const subjenis of subjenisOptions) {
+            const option = new Option(subjenis, subjenis);
+            subjenisCiptaanSelect.add(option);
+        }
+    }
+
+    // Menambahkan event listener untuk mengubah opsi subjenis ciptaan saat jenis ciptaan berubah
+    jenisCiptaanSelect.addEventListener('change', updateSubjenisCiptaanOptions);
+
+    // Memanggil fungsi pertama kali untuk menampilkan opsi subjenis ciptaan awal
+    updateSubjenisCiptaanOptions();
+</script>
 @endsection

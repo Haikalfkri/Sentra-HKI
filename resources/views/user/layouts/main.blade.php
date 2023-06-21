@@ -44,41 +44,38 @@
         <div class="collapse navbar-collapse w-auto h-100" style="position: fixed;" id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}" href="dashboard">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link {{ request()->is('user/dashboard') ? 'active' : '' }}" href="{{ url('user/dashboard') }}">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Beranda</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('user/profile') ? 'active' : '' }}" href="profile">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link {{ request()->is('user/profile') ? 'active' : '' }}" href="{{ url('user/profile') }}">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text  ms-1">Profil</span>
+                        <span class="nav-link-text ms-1">Profil</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('user/form') ? 'active' : '' }}" href="form">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link {{ request()->is('user/form') ? 'active' : '' }}" href="{{ url('user/form') }}">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-dark text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Form</span>
+                        <span class="nav-link-text ms-1">Formulir</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('user/status') ? 'active' : '' }}" href="status">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link {{ request()->is('user/status') ? 'active' : '' }}" href="{{ url('user/status') }}">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-bell-55 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Status</span>
                     </a>
                 </li>
+
                 <hr class="horizontal dark mt-0 mb-0">
                 <li class="nav-item">
                     <a class="nav-link" href="../home">
@@ -173,18 +170,9 @@
             },
             xAxis: {
                 categories: [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
+                    'Lengkap',
+                    'Belum Lengkap',
+                    'Diproses',
                 ],
                 crosshair: true
             },
@@ -208,12 +196,11 @@
             },
             series: [{
                 name: 'Ajuan',
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                data: [0, 0, 0]
 
             }]
         });
     </script>
-
 </body>
 
 </html>

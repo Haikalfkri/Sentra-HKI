@@ -10,9 +10,7 @@
                     <div class="col-8">
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Lengkap</p>
-                            <h5 class="font-weight-bolder">
-                                {{ isset($lengkapCount) ? $lengkapCount : 0 }}
-                            </h5>
+                            <h5 class="font-weight-bolder">{{ $lengkapCount }}</h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Lengkap</span>
                             </p>
@@ -35,7 +33,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Belum Lengkap</p>
                             <h5 class="font-weight-bolder">
-                                {{ isset($belumLengkapCount) ? $belumLengkapCount : 0 }}
+                                {{ $belumLengkapCount }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-danger text-sm font-weight-bolder">Belum Lengkap</span>
@@ -59,7 +57,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Diproses</p>
                             <h5 class="font-weight-bolder">
-                                {{ isset($diprosesCount) ? $diprosesCount : 0 }}
+                                {{ $diprosesCount }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Diproses</span>
@@ -83,7 +81,7 @@
                         <div class="numbers">
                             <p class="text-sm mb-0 text-uppercase font-weight-bold">Total ajuan</p>
                             <h5 class="font-weight-bolder">
-                                {{ isset($totalCount) ? $totalCount : 0 }}
+                                {{ $totalCount }}
                             </h5>
                             <p class="mb-0">
                                 <span class="text-success text-sm font-weight-bolder">Total ajuan</span>
@@ -104,10 +102,25 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card z-index-2 h-100">
                 <div class="card-body p-3">
+                    <div class="month-year-select">
+                        <label for="tahun-select">Pilih Tahun:
+                        <select id="tahun-select" class="form-select form-select-sm" style="width: 100px;">
+                            @for ($year = date('Y'); $year <= date('Y')+10; $year++)
+                                <option value="{{ $year }}" {{ $year == 2023 ? 'selected' : '' }}>{{ $year }}</option>
+                            @endfor
+                        </select></label>
+                        <label for="bulan-select">Pilih Bulan:
+                        <select id="bulan-select" class="form-select form-select-sm" style="width: 100px;">
+                            @for ($i = 1; $i <= 12; $i++)
+                                <option value="{{ $i }}" {{ $i == 6 ? 'selected' : '' }}>{{ date('M', mktime(0, 0, 0, $i, 1)) }}</option>
+                            @endfor
+                        </select></label>
+                    </div>
                     <div id="chart" class="chart"></div>
                 </div>
             </div>
         </div>
+
 
         <div class="col-lg-5">
             <div class="card card-carousel overflow-hidden h-100 p-0">

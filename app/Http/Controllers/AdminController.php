@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\RekapPengajuan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
 
-class LandingController extends Controller
+class AdminController extends Controller
 {
+
     public function index()
     {
         // Mendapatkan seluruh data pengajuan dengan status "Lengkap"
@@ -26,13 +26,9 @@ class LandingController extends Controller
         // Total ajuan adalah jumlah seluruh data pengajuan
         $totalCount = RekapPengajuan::count();
 
-        // Mengirimkan data ke tampilan home.home
-        return view('home.home', compact('lengkapCount', 'belumLengkapCount', 'diprosesCount', 'totalCount'));
-    }
-
-    public function home()
-    {
-        return view('home.home');
+        // Mengirimkan data ke tampilan admin.index
+        return view('admin.dashboard', compact('lengkapCount', 'belumLengkapCount', 'diprosesCount', 'totalCount'));
     }
 
 }
+

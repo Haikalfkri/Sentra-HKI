@@ -18,14 +18,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-        use HasFactory;
     protected $table = 'users';
     protected $primaryKey = 'id_users';
     protected $fillable = [
         'username', 'password', 'role'
     ];
 
-   public function userProfile(): HasOne
+    public function userProfile(): HasOne
     {
         return $this->hasOne(UserProfile::class, 'id_users');
     }
@@ -34,7 +33,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(PengajuanHKI::class, 'id_users', 'id_users');
     }
-
 
     /**
      * The attributes that should be hidden for serialization.
@@ -54,5 +52,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
 }

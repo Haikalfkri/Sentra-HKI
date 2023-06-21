@@ -22,11 +22,6 @@ class RekapPengajuanHKIController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $pengajuanHKI = PengajuanHKI::all();
@@ -61,35 +56,45 @@ class RekapPengajuanHKIController extends Controller
         }
     }
 
-    public function reject(Request $request, $id_pengajuanhki)
-    {
-        $rekapPengajuan = RekapPengajuan::where('id_pengajuanhki', $id_pengajuanhki)->first();
-
-        if ($rekapPengajuan) {
-            $rekapPengajuan->status = 'Belum Lengkap';
-            $rekapPengajuan->keterangan = $request->input('keterangan');
-            $rekapPengajuan->save();
-
-            return redirect()->back()->with('success', 'Pengajuan ditolak.');
-        } else {
-            return redirect()->back()->with('error', 'Pengajuan tidak ditemukan.');
-        }
-    }
-
     public function accept(Request $request, $id_pengajuanhki)
     {
         $rekapPengajuan = RekapPengajuan::where('id_pengajuanhki', $id_pengajuanhki)->first();
 
         if ($rekapPengajuan) {
+            if ($rekapPengajuan->status === 'Lengkap') {
+                return redirect()->back()->with('error', 'Pengajuan sudah tidak bisa diubah.');
+            }
+
             $rekapPengajuan->status = 'Lengkap';
             $rekapPengajuan->keterangan = $request->input('keterangan');
             $rekapPengajuan->save();
 
-            return redirect()->back()->with('success', 'Pengajuan diterima.');
+            return redirect()->back()->with('success', 'Pengajuan Lengkap.');
         } else {
             return redirect()->back()->with('error', 'Pengajuan tidak ditemukan.');
         }
     }
+
+
+    public function reject(Request $request, $id_pengajuanhki)
+    {
+        $rekapPengajuan = RekapPengajuan::where('id_pengajuanhki', $id_pengajuanhki)->first();
+
+        if ($rekapPengajuan) {
+            if ($rekapPengajuan->status === 'Lengkap') {
+                return redirect()->back()->with('error', 'Pengajuan sudah tidak bisa diubah.');
+            }
+
+            $rekapPengajuan->status = 'Belum Lengkap';
+            $rekapPengajuan->keterangan = $request->input('keterangan');
+            $rekapPengajuan->save();
+
+            return redirect()->back()->with('success', 'Pengajuan Belum Lengkap.');
+        } else {
+            return redirect()->back()->with('error', 'Pengajuan tidak ditemukan.');
+        }
+    }
+
 
     public function createZipFile($filePaths, $zipName)
     {

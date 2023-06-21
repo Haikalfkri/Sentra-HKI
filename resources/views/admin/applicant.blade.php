@@ -62,6 +62,11 @@
                                 </tr>
                             @endforeach
                         @endisset
+                        @if ($pengajuanHKI->isEmpty())
+                        <tr>
+                            <td colspan="7">Tidak ada pengajuan HKI.</td>
+                        </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>

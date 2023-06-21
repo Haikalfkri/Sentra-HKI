@@ -12,7 +12,7 @@ class PengajuanHKI extends Model
     protected $table = 'pengajuan_hki';
     protected $primaryKey = 'id_pengajuanhki';
     protected $fillable = [
-        'iduser_profile','id_users','tgl_pengajuan','judul_hki','deskripsi','jenis_hki',
+        'iduser_profile','id_users','tgl_pengajuan','judul_hki','deskripsi','jenis_hki','jenis_ciptaan','subjenis_ciptaan'
     ];
 
     public function userProfile()

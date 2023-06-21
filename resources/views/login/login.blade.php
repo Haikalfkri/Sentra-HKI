@@ -44,12 +44,12 @@
                                 </div>
                             @endif
                             <div class="form-group d-md-flex">
-                                <div class="w-50">
-                                    <label class="checkbox-wrap checkbox-primary">Ingat saya
-                                        <input type="checkbox" checked>
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
+                              <div class="w-50">
+                                <label class="checkbox-wrap checkbox-primary">Ingat saya
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </div>
                             </div>
                         </form>
                     </div>

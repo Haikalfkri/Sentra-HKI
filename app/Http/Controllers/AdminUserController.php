@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class AdminUserController extends Controller
 {
-
-     public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -21,12 +20,6 @@ class AdminUserController extends Controller
         $users = User::with('userProfile')->get();
         return view('admin.user', ['users' => $users]);
     }
-
-    public function create()
-    {
-        return view('admin.user');
-    }
-
 
     public function store(Request $request)
     {
@@ -48,17 +41,17 @@ class AdminUserController extends Controller
 
         try {
             // Simpan data user
-            $users = new User();
-            $users->username = $validatedData['username'];
-            $users->password = Hash::make($validatedData['password']);
-            $users->role = $validatedData['role'];
-            $users->save();
+            $user = new User();
+            $user->username = $validatedData['username'];
+            $user->password = Hash::make($validatedData['password']);
+            $user->role = $validatedData['role'];
+            $user->save();
 
             // Simpan data profil pengguna
             $userProfile = new UserProfile();
-            $userProfile->id_users = $users->id;
+            $userProfile->id_users = $user->id;
             $userProfile->nama = $validatedData['nama'];
-            $users->userProfile()->save($userProfile);
+            $user->userProfile()->save($userProfile);
 
             DB::commit();
 
@@ -67,32 +60,27 @@ class AdminUserController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
 
-        // Tangani pesan kesalahan jika username sudah digunakan
-        if ($e->getCode() === '23000') {
-            $errorMessage = 'NIK sudah digunakan.';
-        } else {
-            $errorMessage = 'Data gagal disimpan!';
-        }
+            // Tangani pesan kesalahan jika username sudah digunakan
+            if ($e->getCode() === '23000') {
+                $errorMessage = 'NIK sudah digunakan.';
+            } else {
+                $errorMessage = 'Data gagal disimpan!';
+            }
 
-            session()->flash('notifikasi', 'Data gagal disimpan!');
+            session()->flash('notifikasi', $errorMessage);
             session()->flash('type', 'error');
 
-            dd($e->getMessage()); // Cetak pesan kesalahan untuk debugging
+            return redirect('/admin/user')->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/user');
+        return redirect('/admin/user')->with('success', 'Data berhasil disimpan!');
     }
 
 
     public function destroy($id)
     {
         // Cari pengguna berdasarkan id_users
-        $user = User::where('id_users', '=', $id)->first();
-
-        // Periksa apakah pengguna ditemukan
-        if (!$user) {
-            return redirect()->back()->with('error', 'Pengguna tidak ditemukan.');
-        }
+        $user = User::findOrFail($id);
 
         // Hapus pengguna jika ditemukan
         if ($user->delete()) {
@@ -101,5 +89,4 @@ class AdminUserController extends Controller
 
         return redirect()->back()->with('error', 'Gagal menghapus pengguna.');
     }
-
 }

@@ -4,58 +4,73 @@ namespace App\Http\Controllers;
 
 use App\Models\RekapPengajuan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;\
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Database\Query\Builder;
 
 
 class UserController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        // Mengambil data pengajuan dengan status Diproses
-        $diprosesCount = RekapPengajuan::where('status', 'Diproses')->count();
+        $userId = auth()->user()->id_users; // Mendapatkan ID pengguna yang terautentikasi
 
-        // Mengambil data pengajuan dengan status Lengkap
-        $lengkapCount = RekapPengajuan::where('status', 'Lengkap')->count();
+        // Mendapatkan seluruh data pengajuan dengan status "Lengkap"
+        $lengkapPengajuan = RekapPengajuan::where('status', 'Lengkap')->get();
+        $lengkapCount = $lengkapPengajuan->count();
+        
+        // Mendapatkan seluruh data pengajuan dengan status "Belum Lengkap"
+        $belumLengkapPengajuan = RekapPengajuan::where('status', 'Belum Lengkap')->get();
+        $belumLengkapCount = $belumLengkapPengajuan->count();
 
-        // Mengambil data pengajuan dengan status Belum Lengkap
-        $belumLengkapCount = RekapPengajuan::where('status', 'Belum Lengkap')->count();
+        // Mendapatkan seluruh data pengajuan dengan status "Diproses"
+        $diprosesPengajuan = RekapPengajuan::where('status', 'Diproses')->get();
+        $diprosesCount = $diprosesPengajuan->count();
 
-        // Mengambil total data pengajuan
+        // Total ajuan adalah jumlah seluruh data pengajuan
         $totalCount = RekapPengajuan::count();
 
-        dd($diprosesCount, $lengkapCount, $belumLengkapCount, $totalCount);
-
-        return view('user.dashboard', compact('diprosesCount', 'lengkapCount', 'belumLengkapCount', 'totalCount'));
+        // Mengirimkan data ke tampilan admin.index
+        return view('user.dashboard', compact('lengkapCount', 'belumLengkapCount', 'diprosesCount', 'totalCount'));
     }
 
-    public function showMainLayout()
-    {
-        // Retrieve the monthly data
-        $monthlyData = [];
+public function showMainLayout()
+{
+    $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    $statusCounts = [];
 
-        // Iterate through each month
-        for ($month = 1; $month <= 12; $month++) {
-            // Get the first day of the month
-            $startDate = Carbon::create(date('Y'), $month, 1)->startOfMonth();
-            // Get the last day of the month
-            $endDate = Carbon::create(date('Y'), $month, 1)->endOfMonth();
+    foreach ($months as $month) {
+        $lengkapCount = RekapPengajuan::where('status', 'Lengkap')->whereMonth('created_at', Carbon::parse($month)->month)->count();
+        $belumLengkapCount = RekapPengajuan::where('status', 'Belum Lengkap')->whereMonth('created_at', Carbon::parse($month)->month)->count();
+        $diprosesCount = RekapPengajuan::where('status', 'Diproses')->whereMonth('created_at', Carbon::parse($month)->month)->count();
 
-            // Count the total pengajuan for the month
-            $totalPengajuan = RekapPengajuan::whereBetween('created_at', [$startDate, $endDate])->count();
-
-            // Add the total pengajuan to the monthly data array
-            $monthlyData[] = $totalPengajuan;
-        }
-
-        // Pass the monthly data to the view
-        return view('user.layouts.main')->with('monthlyData', $monthlyData);
+        $statusCounts[] = [
+            'month' => $month,
+            'lengkap' => $lengkapCount,
+            'belumLengkap' => $belumLengkapCount,
+            'diproses' => $diprosesCount,
+        ];
     }
+
+    $chartData = [
+        [
+            'name' => 'Lengkap',
+            'data' => array_column($statusCounts, 'lengkap')
+        ],
+        [
+            'name' => 'Belum Lengkap',
+            'data' => array_column($statusCounts, 'belumLengkap')
+        ],
+        [
+            'name' => 'Diproses',
+            'data' => array_column($statusCounts, 'diproses')
+        ]
+    ];
+
+    return view('user.layouts.main', ['chartData' => $chartData]);
+}
+
+
 
 }

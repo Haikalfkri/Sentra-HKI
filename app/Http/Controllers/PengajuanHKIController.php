@@ -16,11 +16,6 @@ use Illuminate\Support\Facades\Storage;
 class PengajuanHKIController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function create()
     {
         // Mengambil nilai enum "Hak Cipta" dari tabel PengajuanHKI
@@ -54,10 +49,12 @@ class PengajuanHKIController extends Controller
 
         // Periksa apakah catatan PengajuanHKI yang serupa sudah ada untuk pengguna tersebut
         $pengajuanHKI = PengajuanHKI::where('id_users', $user->id_users)
+            ->where('jenis_hki', $request->jenis_hki)
+            ->where('jenis_ciptaan', $request->jenis_ciptaan)
+            ->where('subjenis_ciptaan', $request->subjenis_ciptaan)
             ->where('tgl_pengajuan', $request->tgl_pengajuan)
             ->where('judul_hki', $request->judul_hki)
             ->where('deskripsi', $request->deskripsi)
-            ->where('jenis_hki', $request->jenis_hki)
             ->first();
 
         if ($pengajuanHKI) {
@@ -70,10 +67,12 @@ class PengajuanHKIController extends Controller
             $pengajuanHKI = new PengajuanHKI;
             $pengajuanHKI->iduser_profile = $userProfile->iduser_profile;
             $pengajuanHKI->id_users = $user->id_users;
+            $pengajuanHKI->jenis_hki = $request->jenis_hki;
+            $pengajuanHKI->jenis_ciptaan = $request->jenis_ciptaan;
+            $pengajuanHKI->subjenis_ciptaan = $request->subjenis_ciptaan;
             $pengajuanHKI->tgl_pengajuan = $request->tgl_pengajuan;
             $pengajuanHKI->judul_hki = $request->judul_hki;
             $pengajuanHKI->deskripsi = $request->deskripsi;
-            $pengajuanHKI->jenis_hki = $request->jenis_hki;
             $pengajuanHKI->save();
         }
 
@@ -161,13 +160,17 @@ class PengajuanHKIController extends Controller
         $berkas = Berkas::find($id_berkas);
 
         if ($berkas) {
+            // Mendapatkan status pengajuan dari relasi
+            $rekapPengajuan = $berkas->rekapPengajuan;
+
             // Lakukan operasi yang diperlukan untuk tampilan tinjauan pengajuan
-            return view('user.tinjauan', compact('berkas'));
+            return view('user.tinjauan', compact('berkas', 'rekapPengajuan'));
         } else {
             // Jika berkas tidak ditemukan, tampilkan pesan kesalahan atau alihkan ke halaman yang sesuai
             return redirect()->back()->with('error', 'Berkas tidak ditemukan.');
         }
     }
+    
 
     public function redirectToStatus()
     {
@@ -191,23 +194,36 @@ class PengajuanHKIController extends Controller
         }
     }
 
-    public function update(Request $request, $id_berkas, $berkasField)
-    {
-        $berkas = Berkas::find($id_berkas);
+ public function update(Request $request, $id_berkas, $berkasField)
+{
+    $berkas = Berkas::find($id_berkas);
 
-        if ($berkas) {
-            $file = $request->file($berkasField);
+    if ($berkas) {
+        $file = $request->file($berkasField);
+
+        if ($file) {
             $filename = $file->getClientOriginalName();
             $file->storeAs('public/berkas', $filename);
 
             $berkas->$berkasField = $filename;
             $berkas->save();
 
+            // Jika pengajuan memiliki status "Belum Lengkap"
+            $rekapPengajuan = $berkas->rekapPengajuan;
+            if ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap') {
+                // Setel status pengajuan kembali menjadi "Diproses"
+                $rekapPengajuan->status = 'Diproses';
+                $rekapPengajuan->save();
+            }
+
             return redirect()->route('user.tinjauan', ['id_berkas' => $berkas->id_berkas])->with('success', 'Berkas berhasil diubah.');
         } else {
-            return redirect()->back()->with('error', 'Berkas tidak ditemukan.');
+            return redirect()->back()->with('error', 'File tidak ditemukan.');
         }
+    } else {
+        return redirect()->back()->with('error', 'Berkas tidak ditemukan.');
     }
+}
 
 
     public function hapus($id_pengajuanhki)

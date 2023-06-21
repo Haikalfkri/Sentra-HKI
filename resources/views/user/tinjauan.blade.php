@@ -32,9 +32,15 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'formulir_pendaftaran']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'formulir_pendaftaran']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
                                     <tr>
@@ -46,9 +52,15 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pernyataan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pernyataan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
                                     <tr>
@@ -60,9 +72,15 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pengalihan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'surat_pengalihan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
                                     <tr>
@@ -74,9 +92,15 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'ktp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'ktp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
                                     <tr>
@@ -88,12 +112,18 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'npwp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'npwp']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
-                                                                        <tr>
+                                    <tr>
                                         <td>6</td>
                                         <td>Contoh Ciptaan</td>
                                         <td>
@@ -102,9 +132,15 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'contoh_ciptaan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
-                                                <i class="fas fa-edit"></i> Ubah
-                                            </a>
+                                            @isset($rekapPengajuan)
+                                                @if ($rekapPengajuan && $rekapPengajuan->status === 'Lengkap')
+                                                    <span class="text-muted">Tidak tersedia</span>
+                                                @elseif ($rekapPengajuan && $rekapPengajuan->status === 'Belum Lengkap')
+                                                    <a href="{{ route('berkas.edit', [$berkas->id_berkas, 'contoh_ciptaan']) }}" class="btn btn-secondary btn-sm mr-1 float-left">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </a>
+                                                @endif
+                                            @endisset
                                         </td>
                                     </tr>
                                     <!-- Add more rows for other berkas -->

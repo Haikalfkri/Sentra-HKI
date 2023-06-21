@@ -35,6 +35,16 @@
                                 <td>{{ $pengaju->userProfile->role ?? '' }}</td>
                             </tr>
                             <tr>
+                                <td width="300">Jenis Ciptaan</td>
+                                <td width="5">:</td>
+                                <td>{{ $pengajuanHKI->jenis_ciptaan ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <td width="300">Sub Jenis Ciptaan</td>
+                                <td width="5">:</td>
+                                <td>{{ $pengajuanHKI->subjenis_ciptaan ?? '' }}</td>
+                            </tr>
+                            <tr>
                                 <td>Judul HKI</td>
                                 <td>:</td>
                                 <td>{{ $pengajuanHKI->judul_hki ?? '' }}</td>
@@ -131,7 +141,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">Deskripsi</h4>
                             </div>
-                            <form action="{{ route('admin.berkas.reject', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
+                            <form action="{{ route('admin.applicant.reject', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="GET">
                                 @csrf
                                 <div class="modal-body">
                                     <!-- Description -->
@@ -154,7 +164,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">Deskripsi</h4>
                             </div>
-                            <form action="{{ route('admin.berkas.accept', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
+                            <form action="{{ route('admin.applicant.accept', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="GET">
                                 @csrf
                                 <div class="modal-body">
                                     <!-- Description -->

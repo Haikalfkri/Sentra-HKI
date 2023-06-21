@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\PemohonMiddleware;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -22,9 +24,16 @@ class AuthServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        $this->registerPolicies();
+{
+    $this->registerPolicies();
 
-        //
-    }
+    Gate::define('admin', function ($user) {
+        return $user->isAdmin();
+    });
+
+    Gate::define('pemohon', function ($user) {
+        return $user->isPemohon();
+    });
+}
+
 }

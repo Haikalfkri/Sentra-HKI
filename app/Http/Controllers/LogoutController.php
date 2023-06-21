@@ -13,6 +13,6 @@ class LogoutController extends Controller
 
         // Logika lain yang Anda inginkan setelah logout
 
-        return redirect()->route('landing.index');
+        return redirect()->route('landing.home');
     }
 }
