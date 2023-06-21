@@ -16,7 +16,7 @@
             </div>
             <form action="">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="dataTable" border="1">
+                    <table class="table table-bordered" id="dataTable" border="1">
                         <thead>
                             <tr class="table-info">
                                 <th scope="col">No</th>
@@ -24,6 +24,7 @@
                                 <th scope="col">Tanggal Pengajuan</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Keterangan</th>
+                                <th scope="col">Anggota</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -49,6 +50,9 @@
                                             @else
                                                 -
                                             @endif
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary">Tambah</button>
                                         </td>
                                         <td> <!-- Tambah button hapus -->
                                             <form id="delete-form-{{ $data->id_pengajuanhki }}" action="{{ route('user.hapus', ['id_pengajuanhki' => $data->id_pengajuanhki]) }}" method="POST" style="display: none;">

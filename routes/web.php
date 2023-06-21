@@ -48,8 +48,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/user/edit/{id}', [AdminUserController::class, 'edit'])->name('users.edit');
     Route::get('admin/applicant', [RekapPengajuanHKIController::class, 'index'])->name('admin.index');
     Route::get('admin/tinjauan/{id_berkas}', [RekapPengajuanHKIController::class, 'tinjauan'])->name('admin.tinjauan');
-    Route::post('/admin/berkas/reject/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'reject'])->name('admin.berkas.reject');
-    Route::post('/admin/berkas/accept/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'accept'])->name('admin.berkas.accept');
+    Route::post('/admin/applicant/reject/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'reject'])->name('admin.applicant.reject');
+    Route::post('/admin/applicant/accept/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'accept'])->name('admin.applicant.accept');
     Route::get('/create-zip', [RekapPengajuanHKIController::class, 'createZipFile']);
     Route::get('download-all-berkas', [RekapPengajuanHKIController::class, 'downloadAllBerkas'])->name('admin.berkas.downloadAll');
 });

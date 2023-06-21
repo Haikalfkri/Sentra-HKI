@@ -133,7 +133,8 @@
                 </form>
 
                 <!-- Reject Button -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#RejectBtn">Perbaikan</button>
+                <!-- Reject button -->
+                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#RejectBtn">Perbaikan</button>
                 <div id="RejectBtn" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <!-- Modal content-->
@@ -141,7 +142,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">Deskripsi</h4>
                             </div>
-                            <form action="{{ route('admin.applicant.reject', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="GET">
+                            <form action="{{ route('admin.applicant.reject', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
                                 @csrf
                                 <div class="modal-body">
                                     <!-- Description -->
@@ -156,7 +157,7 @@
                 </div>
 
                 <!-- Accept button -->
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AcceptBtn">Terima</button>
+                <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AcceptBtn">Terima</button>
                 <div id="AcceptBtn" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <!-- Modal content-->
@@ -164,7 +165,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">Deskripsi</h4>
                             </div>
-                            <form action="{{ route('admin.applicant.accept', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="GET">
+                            <form action="{{ route('admin.applicant.accept', ['id_pengajuanhki' => $pengajuanHKI->id_pengajuanhki]) }}" method="POST">
                                 @csrf
                                 <div class="modal-body">
                                     <!-- Description -->
@@ -177,6 +178,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

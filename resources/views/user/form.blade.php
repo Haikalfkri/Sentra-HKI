@@ -49,7 +49,7 @@
                                 <input type="text" class="form-control" id="id" placeholder="cth : 113053" value="{{ Auth::user()->username }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="nama">Nama Pengusul</label>
+                                <label for="nama">Nama Ketua Pengusul</label>
                                 <input type="text" class="form-control" id="nama" placeholder="" value="{{ Auth::user()->userProfile->nama }}" readonly>
                             </div>
                             <div class="form-group">
