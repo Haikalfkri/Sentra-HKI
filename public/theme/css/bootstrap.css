@@ -1793,6 +1793,10 @@ progress {
   border-top-width: 0;
 }
 
+.table-striped {
+    background-color: #fff; /* Latar belakang putih */
+}
+
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);

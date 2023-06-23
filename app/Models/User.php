@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -17,11 +18,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+    protected $primaryKey = 'id_users';
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'username', 'password', 'role'
     ];
+
+    public function userProfile(): HasOne
+    {
+        return $this->hasOne(UserProfile::class, 'id_users');
+    }
+
+    public function pengajuanHKIs()
+    {
+        return $this->hasMany(PengajuanHKI::class, 'id_users', 'id_users');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

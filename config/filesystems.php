@@ -35,6 +35,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'public_uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/berkas'),
+            'url' => env('APP_URL').'/storage/berkas',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
