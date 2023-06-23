@@ -11,8 +11,9 @@
                     <a href="{{ route('admin.berkas.downloadAll') }}" class="btn btn-primary float-end mb-5">Download</a>
                 </div>
                 <!-- Table -->
+                <h4 style="text-align: left; margin-left: 25px">Detail Pengajuan</h4>
                 <div class="col-md-12">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table">
                             <tr>
                                 <td width="300">Email</td>
@@ -58,6 +59,7 @@
                     </div>
                 </div>
 
+                <h4 style="text-align: left; margin-left: 25px" class="mb-4 mt-2">Berkas</h4>
                 <form action="">
                     <div class="table-responsive">
                         <table class="table table-hover table-bordered" id="dataTable" border="1">
@@ -116,7 +118,7 @@
                                         </td>
 
                                     </tr>
-                                                                        <tr>
+                                    <tr>
                                         <td>6</td>
                                         <td>Contoh Ciptaan</td>
                                         <td>
@@ -132,9 +134,11 @@
                     </div>
                 </form>
 
+
+                <div class="d-flex justify-content-end mt-4">
                 <!-- Reject Button -->
                 <!-- Reject button -->
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#RejectBtn">Perbaikan</button>
+                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#RejectBtn" style="margin-right: 10px;">Perbaikan</button>
                 <div id="RejectBtn" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <!-- Modal content-->
@@ -177,6 +181,7 @@
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
 
             </div>

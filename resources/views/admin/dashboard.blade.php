@@ -154,4 +154,55 @@
         </div>
     </div>
     </div>
+
+
 @endsection
+
+@push('scripts')
+    <script>
+        const countData = [
+            {{ $lengkapCount }},
+            {{ $belumLengkapCount }},
+            {{ $diprosesCount }}
+        ];
+
+        Highcharts.chart('chart', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Total Ajuan'
+            },
+            xAxis: {
+                categories: [
+                    'Lengkap',
+                    'Belum Lengkap',
+                    'Diproses',
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Ajuan'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Ajuan',
+                data: countData
+            }]
+        });
+    </script>
+@endpush

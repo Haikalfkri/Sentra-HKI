@@ -31,7 +31,7 @@ class RekapPengajuan extends Model
     
     public function pengajuanHki()
     {
-        return $this->belongsTo(PengajuanHki::class, 'id_pengajuanhki');
+        return $this->belongsTo(PengajuanHKI::class, 'id_pengajuanhki');
     }
     
     public function user()

@@ -13,7 +13,7 @@
                         <input type="search" class="form-control" name="q" placeholder="Type here..." value="{{ request('judul_hki') }}" id="search-input">
                     </form>
                 </div>
-            </div>
+            </div>  
             <form action="">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" border="1">
@@ -24,7 +24,6 @@
                                 <th scope="col">Tanggal Pengajuan</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Keterangan</th>
-                                <th scope="col">Anggota</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -51,9 +50,7 @@
                                                 -
                                             @endif
                                         </td>
-                                        <td>
-                                            <button class="btn btn-primary">Tambah</button>
-                                        </td>
+        
                                         <td> <!-- Tambah button hapus -->
                                             <form id="delete-form-{{ $data->id_pengajuanhki }}" action="{{ route('user.hapus', ['id_pengajuanhki' => $data->id_pengajuanhki]) }}" method="POST" style="display: none;">
                                                 @csrf
@@ -67,6 +64,10 @@
                                                     <i class="fa fa-edit fa-lg" aria-hidden="true"></i> edit
                                                 </a>
                                             @endif
+                                            <br>
+                                            <a href="{{ route('pencipta.index', ['id_pengajuanhki' => $data->id_pengajuanhki]) }}" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-plus" aria-hidden="true"></i> Tambah Pencipta
+                                            </a>
                                         </td>
                                     </tr>
                                 @empty
@@ -82,4 +83,5 @@
         </div>
     </div>
 </div>
+
 @endsection

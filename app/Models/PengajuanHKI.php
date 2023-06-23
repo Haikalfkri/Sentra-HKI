@@ -34,4 +34,9 @@ class PengajuanHKI extends Model
     {
         return $this->hasOne(RekapPengajuan::class, 'id_pengajuanhki', 'id_pengajuanhki');
     }
+
+    public function pencipta()
+    {
+        return $this->hasMany(Pencipta::class, 'id_pengajuanhki');
+    }
 }

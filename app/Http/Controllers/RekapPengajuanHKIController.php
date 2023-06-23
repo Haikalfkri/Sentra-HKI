@@ -69,7 +69,7 @@ class RekapPengajuanHKIController extends Controller
             $rekapPengajuan->keterangan = $request->input('keterangan');
             $rekapPengajuan->save();
 
-            return redirect()->back()->with('success', 'Pengajuan Lengkap.');
+            return redirect()->route('admin.index')->with('success', 'Pengajuan Lengkap.');
         } else {
             return redirect()->back()->with('error', 'Pengajuan tidak ditemukan.');
         }
@@ -89,7 +89,7 @@ class RekapPengajuanHKIController extends Controller
             $rekapPengajuan->keterangan = $request->input('keterangan');
             $rekapPengajuan->save();
 
-            return redirect()->back()->with('success', 'Pengajuan Belum Lengkap.');
+            return redirect()->route('admin.index')->with('success', 'Pengajuan Belum Lengkap.');
         } else {
             return redirect()->back()->with('error', 'Pengajuan tidak ditemukan.');
         }

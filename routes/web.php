@@ -11,6 +11,7 @@ use App\Http\Controllers\RekapPengajuanHKIController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PenciptaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,6 +53,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/admin/applicant/accept/{id_pengajuanhki}', [RekapPengajuanHKIController::class, 'accept'])->name('admin.applicant.accept');
     Route::get('/create-zip', [RekapPengajuanHKIController::class, 'createZipFile']);
     Route::get('download-all-berkas', [RekapPengajuanHKIController::class, 'downloadAllBerkas'])->name('admin.berkas.downloadAll');
+
 });
 
 Route::middleware(['auth', 'pemohon'])->group(function () {
@@ -83,6 +85,8 @@ Route::middleware(['auth', 'pemohon'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'index'])->name('user.dashboard');
     Route::get('/dashboard', [UserController::class, 'showMainLayout'])->name('dashboard');
     Route::delete('/hapus/{id_pengajuanhki}', [PengajuanHKIController::class, 'hapus'])->name('user.hapus');
+    Route::get('/pencipta', [PenciptaController::class, 'index'])->name('pencipta.index');
+    Route::post('/pencipta', [PenciptaController::class, 'store'])->name('pencipta.store');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout')->middleware('auth');

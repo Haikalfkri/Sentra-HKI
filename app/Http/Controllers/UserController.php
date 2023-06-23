@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Database\Query\Builder;
-
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
 
     public function index()
     {
-        $userId = auth()->user()->id_users; // Mendapatkan ID pengguna yang terautentikasi
+        $user = Auth()->user()->id_users; // Mendapatkan ID pengguna yang terautentikasi
 
         // Mendapatkan seluruh data pengajuan dengan status "Lengkap"
         $lengkapPengajuan = RekapPengajuan::where('status', 'Lengkap')->get();

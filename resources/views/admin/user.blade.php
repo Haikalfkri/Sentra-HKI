@@ -16,12 +16,6 @@
                     </form>
                 </div>
 
-                @if(session('notifikasi'))
-                    <div class="alert alert-{{ session('type') }}" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
-                        {{ session('notifikasi') }}
-                    </div>
-                @endif
-
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -69,16 +63,6 @@
                 </div>
 
 <form action="">
-@if($errors->has('username'))
-    <div class="alert alert-danger" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
-        {{ $errors->first('username') }}
-    </div>
-@endif
-@if(session('success'))
-    <div class="alert alert-danger" style="text-align: center; color: white; height: 40px; display: flex; align-items: center; justify-content: center;">
-    {{ session('success') }}
-    </div>
-@endif
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" border="1">
             <thead>
@@ -116,13 +100,13 @@
                     </button>
                 </td>
             </tr>
-        @empty
-            <tr>
-                <td colspan="6">Tidak ada data.</td>
-            </tr>
-        @endforelse
-    @endisset
-</tbody>
+            @empty
+                <tr>
+                    <td colspan="6">Tidak ada data.</td>
+                </tr>
+            @endforelse
+            @endisset
+            </tbody>
 
         </table>
     </div>

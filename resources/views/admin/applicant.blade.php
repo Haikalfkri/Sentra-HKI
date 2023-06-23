@@ -22,7 +22,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Nomor Induk Karyawan</th>
                             <th scope="col">Judul HKI</th>
-                            <th scope="col">Tanggal Pengajuan</th>
+                            <th scope="col">Tanggal diumumkan</th>
                             <th scope="col">Tinjauan</th>
                             <th scope="col">Status</th>
                             <th scope="col">Keterangan</th>

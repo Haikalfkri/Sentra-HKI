@@ -62,15 +62,10 @@ class AdminUserController extends Controller
 
             // Tangani pesan kesalahan jika username sudah digunakan
             if ($e->getCode() === '23000') {
-                $errorMessage = 'NIK sudah digunakan.';
-            } else {
-                $errorMessage = 'Data gagal disimpan!';
+                return redirect('/admin/user')->with('error', 'Nik sudah digunakan!');
+            } else {                
+                return redirect('/admin/user')->with('error', 'Data gagal disimpan!');
             }
-
-            session()->flash('notifikasi', $errorMessage);
-            session()->flash('type', 'error');
-
-            return redirect('/admin/user')->withErrors($e->getMessage());
         }
 
         return redirect('/admin/user')->with('success', 'Data berhasil disimpan!');

@@ -6,9 +6,9 @@ use App\Models\RekapPengajuan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class AdminController extends Controller
 {
-
     public function index()
     {
         // Mendapatkan seluruh data pengajuan dengan status "Lengkap"
@@ -29,6 +29,7 @@ class AdminController extends Controller
         // Mengirimkan data ke tampilan admin.index
         return view('admin.dashboard', compact('lengkapCount', 'belumLengkapCount', 'diprosesCount', 'totalCount'));
     }
+
 
 }
 

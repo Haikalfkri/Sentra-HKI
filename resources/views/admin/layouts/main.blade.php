@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,6 +22,8 @@
     <link id="pagestyle" href="/theme/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
     <link rel="stylesheet" href="/theme/assets/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/theme/assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -142,6 +143,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="   https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -151,54 +153,36 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            title: 'Success',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            showConfirmButton: 'OK', // Automatically close after 3 seconds
+        });
+    </script>
+    @elseif (session('error'))
+    <script>
+        Swal.fire({
+            title: 'Error',
+            text: '{{ session('error') }}',
+            icon: 'error',
+            showConfirmButton: 'OK',
+        });
+    </script>
+    @endif
+
+    
+
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="/theme/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    @stack('scripts')
 
     <script>
-        Highcharts.chart('chart', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Total Ajuan'
-            },
-            xAxis: {
-                categories: [
-                    'Lengkap',
-                    'Belum Lengkap',
-                    'Diproses',
-                ],
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Ajuan'
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: 'Ajuan',
-                data: [0, 0, 0]
-
-            }]
-        });
-    </script>
-
-<script>
     const searchInput = document.getElementById('search-input');
     const tableRows = document.querySelectorAll('#dataTable tbody tr');
 
@@ -221,6 +205,7 @@
         });
     });
 </script>
+
 </body>
 
 </html>
